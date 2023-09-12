@@ -1,0 +1,8 @@
+#include "printf.h"
+
+void my_printf(char* string, int number){
+	char buffer[128];
+	int num = sprintf (buffer,"%s %d\r\n", string, number);
+	USART_Write (USART2, buffer,num);
+
+}

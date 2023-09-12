@@ -8,6 +8,8 @@
 #include "UART.h"
 #include "demo.h"
 
+#include "printf.h"
+#include "hello_world.h"
 	
 int main(void){
 
@@ -16,7 +18,9 @@ int main(void){
 	LED_Init();
 	UART2_Init();
 	
+
 	// application run function
-	run_demo() ;
+	hello_world();
+	//run_demo() ;
 }
 
