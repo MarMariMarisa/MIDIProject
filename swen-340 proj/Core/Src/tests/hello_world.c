@@ -1,4 +1,5 @@
 #include "printf.h";
+
 void hello_world(){
-	my_printf("Hello, World:", 25);
+	printf("Hello, World!\r\n");
 }

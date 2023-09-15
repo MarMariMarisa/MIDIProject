@@ -1,0 +1,25 @@
+/*
+ * Created On: September 12, 2023
+ * 	Author: Marisa
+ *
+ */
+
+#include "printf.h"
+#include "UART.H"
+#include <stdio.h>
+
+int puts(const char*){
+	int len = strlen(string);
+	print_string(string,len);
+}
+
+static void print_string(const char* string,int len){
+	USART_Write(USART2,(unsigned char*)string,len);
+}
+
+int printf(const char* format,...){
+	char buffer[128];
+	int num = sprintf(buffer,"%s",format);
+	print_string(buffer,num);
+	return num;
+}
