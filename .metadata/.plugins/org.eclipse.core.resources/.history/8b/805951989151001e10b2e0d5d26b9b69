@@ -1,7 +1,0 @@
-#include "printf.h"
-
-void my_printf(char* string, int number){
-	unsigned char* bugger =
-	USART_Write (USART2, buffer,15);
-
-}
