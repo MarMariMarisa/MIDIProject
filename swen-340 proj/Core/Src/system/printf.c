@@ -8,6 +8,7 @@
 #include "UART.H"
 #include <stdio.h>
 #include <string.h>
+#include<stdarg.h>
 
 static char buffer[128];
 
@@ -24,7 +25,11 @@ int puts(const char* string){
 
 
 int printf(const char* format,...){
-	int num = sprintf(buffer,"%s",format);
-	print_string(buffer,num);
-	return num;
+	va_list aptr;
+	int ret;
+	va_start(aptr, format);
+	ret = vsprintf(buffer, format, aptr);
+	va_end(aptr);
+	USART_Write(USART2,(unsigned char*)buffer,ret);
+	return(ret);
 }

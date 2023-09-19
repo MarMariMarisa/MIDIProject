@@ -6,3 +6,8 @@
  */
 
 #include "project.h"
+#include "printf.h"
+
+void print_f_sample(){
+	printf("Integers: %i %u \n", -3456, 3456);
+}

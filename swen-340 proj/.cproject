@@ -53,6 +53,7 @@
 									<listOptionValue builtIn="false" value="../Core/Inc/devices"/>
 									<listOptionValue builtIn="false" value="../Core/Inc/midi"/>
 									<listOptionValue builtIn="false" value="../Core/Inc/system"/>
+									<listOptionValue builtIn="false" value="../Core/Inc/tests"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.996901634" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>

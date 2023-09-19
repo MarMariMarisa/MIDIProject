@@ -10,17 +10,18 @@
 
 #include "printf.h"
 #include "hello_world.h"
+#include "project.h"
 	
 int main(void){
 
 	// initialization code
 	System_Clock_Init(); // set System Clock = 80 MHz
-	LED_Init();
+	//LED_Init();
 	UART2_Init();
 	
 
 	// application run function
-	hello_world();
+	print_f_sample();
 	//run_demo() ;
 }
 
