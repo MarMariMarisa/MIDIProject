@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;swn-340 projjj/Core&apos;" deleteContents="false" description="Delete resource &apos;swn-340 projjj/Core&apos;" element1="/swn-340 projjj/Core" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1695317284545"/>&#x0A;<refactoring comment="Delete resource &apos;swn-340 projjj/Drivers&apos;" deleteContents="false" description="Delete resource &apos;swn-340 projjj/Drivers&apos;" element1="/swn-340 projjj/Drivers" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1695317667598"/>
+</session>

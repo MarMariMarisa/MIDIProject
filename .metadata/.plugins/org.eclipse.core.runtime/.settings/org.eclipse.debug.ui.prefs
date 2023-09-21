@@ -1,7 +1,7 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=2b04e49f3fb6c0319312e50ccee0df20789e56f4
 eclipse.preferences.version=1
-<<<<<<< HEAD
-org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
-=======
 org.eclipse.debug.ui.MemoryHistoryKnownColor=235,235,235
 org.eclipse.debug.ui.MemoryHistoryUnknownColor=170,175,185
 org.eclipse.debug.ui.MemoryView.orientation=0
@@ -23,5 +23,4 @@ pref_state_memento.org.eclipse.debug.ui.ExpressionView=<?xml version\="1.0" enco
 pref_state_memento.org.eclipse.debug.ui.RegisterView=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<VariablesViewMemento org.eclipse.debug.ui.SASH_DETAILS_PART\="315" org.eclipse.debug.ui.SASH_VIEW_PART\="684">\r\n<PRESENTATION_CONTEXT_PROPERTIES IMemento.internal.id\="org.eclipse.debug.ui.RegisterView">\r\n<BOOLEAN BOOLEAN\="true" IMemento.internal.id\="PRESENTATION_SHOW_LOGICAL_STRUCTURES"/>\r\n</PRESENTATION_CONTEXT_PROPERTIES>\r\n</VariablesViewMemento>
 pref_state_memento.org.eclipse.debug.ui.VariableView=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<VariablesViewMemento org.eclipse.debug.ui.SASH_DETAILS_PART\="315" org.eclipse.debug.ui.SASH_VIEW_PART\="684">\r\n<PRESENTATION_CONTEXT_PROPERTIES IMemento.internal.id\="org.eclipse.debug.ui.VariableView">\r\n<INTEGER IMemento.internal.id\="initialChildCountLimitForCollections" INTEGER\="100"/>\r\n<BOOLEAN BOOLEAN\="true" IMemento.internal.id\="PRESENTATION_SHOW_LOGICAL_STRUCTURES"/>\r\n</PRESENTATION_CONTEXT_PROPERTIES>\r\n</VariablesViewMemento>
 preferredDetailPanes=DefaultDetailPane\:DefaultDetailPane|
->>>>>>> 2b04e49f3fb6c0319312e50ccee0df20789e56f4
 preferredTargets=org.eclipse.cdt.debug.ui.toggleCBreakpointTarget,org.eclipse.cdt.debug.ui.toggleCDynamicPrintfTarget\:org.eclipse.cdt.debug.ui.toggleCBreakpointTarget|
