@@ -1,21 +1,21 @@
-22:34:30 **** Incremental Build of configuration Debug for project swn-340 projjj ****
+13:36:07 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/devices/LED.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/devices/LED.d" -MT"Core/Src/devices/LED.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/devices/LED.o"
+arm-none-eabi-gcc "../Core/Src/tests/reader.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tests/reader.d" -MT"Core/Src/tests/reader.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tests/reader.o"
 arm-none-eabi-gcc -o "swn-340 projjj.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\swn-340 projjj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swn-340 projjj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: swn-340 projjj.elf
  
 arm-none-eabi-size   swn-340\ projjj.elf 
 arm-none-eabi-objdump -h -S  swn-340\ projjj.elf  > "swn-340 projjj.list"
    text	   data	    bss	    dec	    hex	filename
-   4728	     88	   1904	   6720	   1a40	swn-340 projjj.elf
+   5056	     96	   2160	   7312	   1c90	swn-340 projjj.elf
 Finished building: default.size.stdout
  
 Finished building: swn-340 projjj.list
  
-22:35:12 **** Incremental Build of configuration Debug for project swn-340 projjj ****
+13:36:12 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
 arm-none-eabi-size   swn-340\ projjj.elf 
    text	   data	    bss	    dec	    hex	filename
-   4728	     88	   1904	   6720	   1a40	swn-340 projjj.elf
+   5056	     96	   2160	   7312	   1c90	swn-340 projjj.elf
 Finished building: default.size.stdout
  

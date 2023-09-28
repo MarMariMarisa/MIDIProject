@@ -1,0 +1,32 @@
+/*
+ * reader.c
+ *
+ *  Created on: Sep 26, 2023
+ *      Author: Marisa
+ */
+
+#include "reader.h"
+#include "UART.h"
+#include "printf.h"
+#include "LED.h"
+void run(){
+	//read one characterA
+	//print that character on it's own line
+	char* line = readline();
+	printf("%s\n",line);
+
+char* read_line(){
+	//read one characterA
+	//print that character on it's own line
+	char ch = (char)USART_Read(USART2);
+	char toReturn[128];
+	int cnt = 0;
+	while(ch != 'n'){
+		ch = (char)USART_Read(USART2);
+		printf("%c\r\n",ch);
+		toReturn[cnt] = ch;
+		cnt++;
+	}
+	return toReturn;
+
+}

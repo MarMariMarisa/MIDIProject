@@ -1,0 +1,28 @@
+/*
+ * reader.c
+ *
+ *  Created on: Sep 26, 2023
+ *      Author: Marisa
+ */
+
+#include "reader.h"
+#include "UART.h"
+#include "printf.h"
+
+uint8_t run(){
+	//read one characterA
+	//print that character on it's own line
+	print("Enter the letter 't' to toggle, 'o' for on and 'l' for off");
+	char ch = (char)USART_Read(USART2);
+	printf("%c\r\n",ch);
+	if(ch == 't'){
+		LED_Toggle(5);
+	}
+	if(ch == 'o'){
+		LED_On(5);
+	}
+	if(ch == 'l'){t
+		LED_Off(5);
+	}
+}
+

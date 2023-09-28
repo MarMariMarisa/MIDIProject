@@ -16,8 +16,10 @@
 #include "demo.h"
 #include "stm32l4xx.h"
 
+#define LED_PIN 5
 
-// This function is to create a delay by consuming CPU cycle on counter
+
+// This function is to create a  delay by consuming CPU cycle on counter
 static void delay_loop( int value )
 {
 	// spin loop consuming CPU to spend time.
@@ -37,9 +39,8 @@ static void demo_of_UART_print(int counter){
 	// delay_systick() ;	// enable this when you are ready to test
 
 	// Toggle LED
-	LED_Toggle(5);
+	LED_Toggle(LED_PIN);
 }
-
 void run_demo(){
 	
 	int counter = 0;

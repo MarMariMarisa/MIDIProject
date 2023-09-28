@@ -1,0 +1,20 @@
+/*
+ * reader.c
+ *
+ *  Created on: Sep 26, 2023
+ *      Author: Marisa
+ */
+
+#include "reader.h"
+#include "UART.h"
+#include "printf.h"
+
+uint8_t run(){
+	//read one characterA
+	//print that character on it's own line
+
+	char ch = (char)USART_Read(USART2);
+	printf("%c\r\n",ch);
+	LED_Toggle(ch);
+}
+

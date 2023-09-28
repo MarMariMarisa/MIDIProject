@@ -11,5 +11,6 @@
 int puts(const char*);
 
 int printf(const char*,...);
+int putchar (int chr);
 
 #endif /* INC_SYSTEM_PRINTF_H_ */

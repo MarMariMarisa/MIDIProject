@@ -1,0 +1,15 @@
+/*
+ * reader.c
+ *
+ *  Created on: Sep 26, 2023
+ *      Author: Marisa
+ */
+
+#include "reader.h"
+
+void run(){
+	//read one character
+	//print that chatacter on it's own line
+	USART_READ()
+}
+

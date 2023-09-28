@@ -11,17 +11,22 @@
 #include "printf.h"
 #include "hello_world.h"
 #include "project.h"
+#include "reader.h"
 	
 int main(void){
 
 	// initialization code
 	System_Clock_Init(); // set System Clock = 80 MHz
-	//LED_Init();
+	LED_Init(5);
 	UART2_Init();
 	
 
-	// application run function
+	// plication run function
 	//print_f_sample();
-	run_demo() ;
+	//run_demo()
+	while(1==1){
+		run();
+	}
+
 }
 

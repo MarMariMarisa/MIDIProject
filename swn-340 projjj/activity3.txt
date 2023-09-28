@@ -122,6 +122,6 @@
    is set and a 0 if it is not set. This should be only 2-3 lines of code.
    
    unint8_t msb_set (unint8_t value) {
-		return (value >> x) & 1;
+		return (value >> 8) & 1;
 
    }
