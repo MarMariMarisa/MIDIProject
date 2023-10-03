@@ -10,9 +10,7 @@
 #include "printf.h"
 #include "LED.h"
 
-static int num1 = -1;
 static char BUFFER[128];
-static int num2 = 5000000;
 
 char* read_line(){
 	//read one characterA
@@ -32,8 +30,7 @@ void run(){
 	//read one characterA
 	//print that character on it's own line
 	char* line = read_line();
-	printf("%s\n",line);
-	printf("%d %d",num1,num2);
+	printf("%s\r\n",line);
 
 }
 
