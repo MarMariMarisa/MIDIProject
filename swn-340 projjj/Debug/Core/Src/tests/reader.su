@@ -1,0 +1,2 @@
+../Core/Src/tests/reader.c:15:7:read_line	16	static
+../Core/Src/tests/reader.c:29:6:run	16	static

@@ -1,54 +1,21 @@
-13:35:35 **** Incremental Build of configuration Debug for project swen-340 proj ****
+13:42:21 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/system/printf.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Core/Inc/tests -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc/demos -I../Core/Inc/devices -I../Core/Inc/midi -I../Core/Inc/system -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system/printf.d" -MT"Core/Src/system/printf.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system/printf.o"
-../Core/Src/system/printf.c: In function 'my_printf':
-../Core/Src/system/printf.c:13:37: warning: format '%s' expects argument of type 'char *', but argument 3 has type 'int' [-Wformat=]
-   13 |         int num = sprintf (buffer,"%s %d\r\n",  string[1]);
-      |                                    ~^           ~~~~~~~~~
-      |                                     |                 |
-      |                                     char *            int
-      |                                    %d
-../Core/Src/system/printf.c:13:40: warning: format '%d' expects a matching 'int' argument [-Wformat=]
-   13 |         int num = sprintf (buffer,"%s %d\r\n",  string[1]);
-      |                                       ~^
-      |                                        |
-      |                                        int
-arm-none-eabi-gcc -o "swen-340 proj.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SWEN-340\course-repo-MarMariMarisa\swen-340 proj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swen-340 proj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: swen-340 proj.elf
+arm-none-eabi-gcc "../Core/Src/tests/reader.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tests/reader.d" -MT"Core/Src/tests/reader.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tests/reader.o"
+arm-none-eabi-gcc -o "swn-340 projjj.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\swn-340 projjj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swn-340 projjj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: swn-340 projjj.elf
  
-arm-none-eabi-size   swen-340\ proj.elf 
-arm-none-eabi-objdump -h -S  swen-340\ proj.elf  > "swen-340 proj.list"
+arm-none-eabi-size   swn-340\ projjj.elf 
+arm-none-eabi-objdump -h -S  swn-340\ projjj.elf  > "swn-340 projjj.list"
    text	   data	    bss	    dec	    hex	filename
-   4772	     88	   1904	   6764	   1a6c	swen-340 proj.elf
+   4960	     88	   2160	   7208	   1c28	swn-340 projjj.elf
 Finished building: default.size.stdout
  
-Finished building: swen-340 proj.list
+Finished building: swn-340 projjj.list
  
-13:35:40 **** Incremental Build of configuration Debug for project swen-340 proj ****
+13:42:31 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
-arm-none-eabi-size   swen-340\ proj.elf 
+arm-none-eabi-size   swn-340\ projjj.elf 
    text	   data	    bss	    dec	    hex	filename
-   4772	     88	   1904	   6764	   1a6c	swen-340 proj.elf
-Finished building: default.size.stdout
- 
-13:36:03 **** Incremental Build of configuration Debug for project swen-340 proj ****
-make -j20 all 
-arm-none-eabi-gcc "../Core/Src/system/printf.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Core/Inc/tests -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc/demos -I../Core/Inc/devices -I../Core/Inc/midi -I../Core/Inc/system -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system/printf.d" -MT"Core/Src/system/printf.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system/printf.o"
-arm-none-eabi-gcc -o "swen-340 proj.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SWEN-340\course-repo-MarMariMarisa\swen-340 proj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swen-340 proj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: swen-340 proj.elf
- 
-arm-none-eabi-size   swen-340\ proj.elf 
-arm-none-eabi-objdump -h -S  swen-340\ proj.elf  > "swen-340 proj.list"
-   text	   data	    bss	    dec	    hex	filename
-   4768	     88	   1904	   6760	   1a68	swen-340 proj.elf
-Finished building: default.size.stdout
- 
-Finished building: swen-340 proj.list
- 
-13:36:54 **** Incremental Build of configuration Debug for project swen-340 proj ****
-make -j20 all 
-arm-none-eabi-size   swen-340\ proj.elf 
-   text	   data	    bss	    dec	    hex	filename
-   4768	     88	   1904	   6760	   1a68	swen-340 proj.elf
+   4960	     88	   2160	   7208	   1c28	swn-340 projjj.elf
 Finished building: default.size.stdout
  

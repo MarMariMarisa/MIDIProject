@@ -65,8 +65,8 @@ all: main-build
 main-build: swen-340\ proj.elf secondary-outputs
 
 # Tool invocations
-swen-340\ proj.elf swen-340\ proj.map: $(OBJS) $(USER_OBJS) C:\Users\Marisa\OneDrive\Desktop\SWEN-340\course-repo-MarMariMarisa\swen-340\ proj\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "swen-340 proj.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SWEN-340\course-repo-MarMariMarisa\swen-340 proj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swen-340 proj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+swen-340\ proj.elf swen-340\ proj.map: $(OBJS) $(USER_OBJS) C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\swen-340\ proj\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "swen-340 proj.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\swen-340 proj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swen-340 proj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
