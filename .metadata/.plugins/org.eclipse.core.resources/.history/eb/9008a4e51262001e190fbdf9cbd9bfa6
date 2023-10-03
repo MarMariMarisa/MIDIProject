@@ -12,12 +12,12 @@
 
 //create struct to hold the systic registers
 
-typedef struct{
+struct SYST{
 	uint32_ CSR;
 	uint32_ RVR;
 	uint32_ CVR;
 	uint32_ CALIB;
-}SYST;
+};
 
 
 // This function is to Initialize SysTick registers

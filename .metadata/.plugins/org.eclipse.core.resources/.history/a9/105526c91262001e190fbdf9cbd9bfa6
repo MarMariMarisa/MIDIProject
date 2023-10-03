@@ -8,16 +8,13 @@
 #ifndef INC_SYSTICK_H_
 #define INC_SYSTICK_H_
 
-#include "stdint.h"
-
 //create struct to hold the systic registers
-
-typedef struct{
-	uint32_ CSR;
-	uint32_ RVR;
-	uint32_ CVR;
-	uint32_ CALIB;
-}SYST;
+struct registers{
+	int SYST_CSR[32];
+	int SYST_RVR[32];
+	int SYSY_CVR[32];
+	int SYST_CALIB[32];
+};
 
 
 // This function is to Initialize SysTick registers
