@@ -12,6 +12,6 @@ void init_systick(){
 	//turn it on
 	SYST syst;
 	syst->RVR = 100000;
-	syst->CSR = syst->CSR | (1 << 0);
+	syst->RVR | (1 << 0);
 
 }
