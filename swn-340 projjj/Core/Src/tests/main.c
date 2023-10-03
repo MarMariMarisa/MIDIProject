@@ -23,7 +23,7 @@ int main(void){
 
 	// plication run function
 	//print_f_sample();
-	//run_demo()
+	run_demo();
 	while(1==1){
 		run();
 	}

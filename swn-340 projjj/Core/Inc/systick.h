@@ -8,6 +8,15 @@
 #ifndef INC_SYSTICK_H_
 #define INC_SYSTICK_H_
 
+//create struct to hold the systic registers
+struct registers{
+	int SYST_CSR[32];
+	int SYST_RVR[32];
+	int SYSY_CVR[32];
+	int SYST_CALIB[32];
+};
+
+
 // This function is to Initialize SysTick registers
 static void init_systick()
 {
