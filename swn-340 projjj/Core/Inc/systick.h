@@ -8,21 +8,22 @@
 #ifndef INC_SYSTICK_H_
 #define INC_SYSTICK_H_
 
+#include "stm32l476xx.h"
 #include "stdint.h"
 
 //create struct to hold the systic registers
 
-typedef struct{
-	uint32_ CSR;
-	uint32_ RVR;
-	uint32_ CVR;
-	uint32_ CALIB;
-}SYST;
+struct SYST{
+	uint32_t CSR;
+	uint32_t RVR;
+	uint32_t CVR;
+	uint32_t CALIB;
+};
 
 
 // This function is to Initialize SysTick registers
-static void init_systick()
-{
+static void init_systick(){
+
 	// Use the SysTick global structure pointer to do the following in this
 	// exact order with separate lines for each step:
 	//
@@ -33,8 +34,8 @@ static void init_systick()
 }
 
 // This fuction is to create delay using SysTick timer counter
-static void delay_systick()
-{
+static void delay_systick(){
+
 	// Using the SysTick global structure pointer do the following:
 	// Create a for loop that loops 10 times
 	// Inside that for loop check the COUNTFLAG bit in the CTRL (CSR)

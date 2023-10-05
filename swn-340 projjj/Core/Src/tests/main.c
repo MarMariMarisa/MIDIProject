@@ -1,4 +1,4 @@
-// main.c with demo
+// main.c with demoinit_systick()
 // Updated and refactored Larry Kiser copyright 2021
 
 
@@ -23,10 +23,11 @@ int main(void){
 
 	// plication run function
 	//print_f_sample();
-	run_demo();
-	while(1==1){
-		run();
-	}
+//	run_demo();
+//	while(1==1){
+//		run();
+//	}
+	clock();
 
 }
 
