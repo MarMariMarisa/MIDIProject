@@ -8,18 +8,21 @@ C_SRCS += \
 ../Core/Src/tests/hello_world.c \
 ../Core/Src/tests/main.c \
 ../Core/Src/tests/reader.c \
+../Core/Src/tests/systick.c \
 ../Core/Src/tests/timer.c 
 
 OBJS += \
 ./Core/Src/tests/hello_world.o \
 ./Core/Src/tests/main.o \
 ./Core/Src/tests/reader.o \
+./Core/Src/tests/systick.o \
 ./Core/Src/tests/timer.o 
 
 C_DEPS += \
 ./Core/Src/tests/hello_world.d \
 ./Core/Src/tests/main.d \
 ./Core/Src/tests/reader.d \
+./Core/Src/tests/systick.d \
 ./Core/Src/tests/timer.d 
 
 
@@ -30,7 +33,7 @@ Core/Src/tests/%.o Core/Src/tests/%.su Core/Src/tests/%.cyclo: ../Core/Src/tests
 clean: clean-Core-2f-Src-2f-tests
 
 clean-Core-2f-Src-2f-tests:
-	-$(RM) ./Core/Src/tests/hello_world.cyclo ./Core/Src/tests/hello_world.d ./Core/Src/tests/hello_world.o ./Core/Src/tests/hello_world.su ./Core/Src/tests/main.cyclo ./Core/Src/tests/main.d ./Core/Src/tests/main.o ./Core/Src/tests/main.su ./Core/Src/tests/reader.cyclo ./Core/Src/tests/reader.d ./Core/Src/tests/reader.o ./Core/Src/tests/reader.su ./Core/Src/tests/timer.cyclo ./Core/Src/tests/timer.d ./Core/Src/tests/timer.o ./Core/Src/tests/timer.su
+	-$(RM) ./Core/Src/tests/hello_world.cyclo ./Core/Src/tests/hello_world.d ./Core/Src/tests/hello_world.o ./Core/Src/tests/hello_world.su ./Core/Src/tests/main.cyclo ./Core/Src/tests/main.d ./Core/Src/tests/main.o ./Core/Src/tests/main.su ./Core/Src/tests/reader.cyclo ./Core/Src/tests/reader.d ./Core/Src/tests/reader.o ./Core/Src/tests/reader.su ./Core/Src/tests/systick.cyclo ./Core/Src/tests/systick.d ./Core/Src/tests/systick.o ./Core/Src/tests/systick.su ./Core/Src/tests/timer.cyclo ./Core/Src/tests/timer.d ./Core/Src/tests/timer.o ./Core/Src/tests/timer.su
 
 .PHONY: clean-Core-2f-Src-2f-tests
 

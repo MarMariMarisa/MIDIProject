@@ -1,5 +1,2 @@
-../Core/Inc/systick.h:25:13:init_systick	1
-../Core/Inc/systick.h:37:13:delay_systick	1
-../Core/Src/tests/timer.c:11:14:init_systk	1
-../Core/Src/tests/timer.c:23:6:run_timer	1
-../Core/Src/tests/timer.c:30:6:clock	3
+../Core/Src/tests/timer.c:15:6:init_syst	1
+../Core/Src/tests/timer.c:26:6:clock	3

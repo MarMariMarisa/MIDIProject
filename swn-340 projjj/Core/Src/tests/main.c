@@ -12,6 +12,7 @@
 #include "hello_world.h"
 #include "project.h"
 #include "reader.h"
+#include "systick.h"
 	
 int main(void){
 
@@ -23,11 +24,7 @@ int main(void){
 
 	// plication run function
 	//print_f_sample();
-//	run_demo();
-//	while(1==1){
-//		run();
-//	}
-	clock();
+	run_demo();
 
 }
 

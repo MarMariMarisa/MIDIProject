@@ -1,28 +1,28 @@
-13:30:19 **** Incremental Build of configuration Debug for project swn-340 projjj ****
+10:52:12 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
-arm-none-eabi-gcc "../Core/Src/tests/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tests/timer.d" -MT"Core/Src/tests/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tests/timer.o"
-In file included from ../Core/Src/tests/timer.c:8:
-../Core/Inc/systick.h:37:13: warning: 'delay_systick' defined but not used [-Wunused-function]
-   37 | static void delay_systick(){
-      |             ^~~~~~~~~~~~~
-../Core/Inc/systick.h:25:13: warning: 'init_systick' defined but not used [-Wunused-function]
-   25 | static void init_systick(){
-      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/tests/systick.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tests/systick.d" -MT"Core/Src/tests/systick.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tests/systick.o"
 arm-none-eabi-gcc -o "swn-340 projjj.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\swn-340 projjj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swn-340 projjj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: swn-340 projjj.elf
  
 arm-none-eabi-size   swn-340\ projjj.elf 
 arm-none-eabi-objdump -h -S  swn-340\ projjj.elf  > "swn-340 projjj.list"
    text	   data	    bss	    dec	    hex	filename
-   4972	     88	   2032	   7092	   1bb4	swn-340 projjj.elf
+   5028	     92	   1908	   7028	   1b74	swn-340 projjj.elf
 Finished building: default.size.stdout
  
 Finished building: swn-340 projjj.list
  
-13:30:21 **** Incremental Build of configuration Debug for project swn-340 projjj ****
+10:52:35 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
 arm-none-eabi-size   swn-340\ projjj.elf 
    text	   data	    bss	    dec	    hex	filename
-   4972	     88	   2032	   7092	   1bb4	swn-340 projjj.elf
+   5028	     92	   1908	   7028	   1b74	swn-340 projjj.elf
+Finished building: default.size.stdout
+ 
+10:52:45 **** Incremental Build of configuration Debug for project swn-340 projjj ****
+make -j20 all 
+arm-none-eabi-size   swn-340\ projjj.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5028	     92	   1908	   7028	   1b74	swn-340 projjj.elf
 Finished building: default.size.stdout
  
