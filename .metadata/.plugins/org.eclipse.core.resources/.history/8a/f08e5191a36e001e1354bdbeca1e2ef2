@@ -26,7 +26,6 @@ void run_hw4(){
 		cnt = cnt+1;
 		if(cnt == 10){
 		LED_Toggle(5);
-		cnt = 0;
 		}
 	}
 }

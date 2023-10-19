@@ -2,7 +2,7 @@
  * systick.h
  *
  *  Created on: Jan 8, 2023
- *      Author: marisa
+ *      Author: bruce
  */
 
 #ifndef INC_SYSTICK_H_
@@ -20,7 +20,10 @@ struct SYST{
 	uint32_t CVR;
 	uint32_t CALIB;
 };
+
 struct SYST* SYST_TICK = (struct SYST*) 0xE000E010;
+
+
 // This function is to Initialize SysTick registers
 struct SYST* init_systick(){
 		//clear csr register
@@ -34,10 +37,15 @@ struct SYST* init_systick(){
 	    return SYST_TICK;
 }
 
-// This function is to create delay using SysTick timer counter
+
+
+// This fuction is to create delay using SysTick timer counter
 void delay_systick(){
+
+	// Using the SysTick global structure pointer do the following:
+	// Create a for loop that loops 10 times
 	int i;
-	for(i=0;i<=0;i++){
+	for(i=0;i<10;i++){
 		// Inside that for loop check the COUNTFLAG bit in the CTRL (CSR)
 		// register in a loop. When that bit is set exit this inner loop
 		int x = 0;
