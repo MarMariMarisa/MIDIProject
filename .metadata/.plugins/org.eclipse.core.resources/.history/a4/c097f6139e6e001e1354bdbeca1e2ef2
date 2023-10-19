@@ -12,14 +12,15 @@
 #include"LED.h"
 
 void run_hw4(){
+	uint8_t ch = 0;
+
 	init_systick();
 	while(1){
-		char ch = USART_Read_Nonblocking(USART2);
-		if(ch != 0){
-			printf("%c",ch);
-		}
+		ch = USART_Read_Nonblocking(USART2);
+		USART_Write(USART2,&ch,1);
 		delay_systick();
 		// Toggle LED
 		LED_Toggle(5);
+		ch = 0;
 	}
 }
