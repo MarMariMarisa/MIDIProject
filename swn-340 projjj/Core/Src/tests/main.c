@@ -13,7 +13,7 @@
 #include "project.h"
 #include "reader.h"
 #include "systick.h"
-	
+#include "hw4.h"
 int main(void){
 
 	// initialization code
@@ -24,7 +24,7 @@ int main(void){
 
 	// plication run function
 	//print_f_sample();
-	run_demo();
+	run_hw4();
 
 }
 

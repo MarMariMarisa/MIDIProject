@@ -107,6 +107,13 @@ uint8_t USART_Read (USART_TypeDef * USARTx) {
 	return ((uint8_t)(USARTx->RDR & 0xFF));
 	// Reading USART_DR automatically clears the RXNE flag 
 }
+uint8_t USART_Read_Nonblocking (USART_TypeDef * USARTx) {
+	if(!(USARTx->ISR & USART_ISR_RXNE)){
+			return 0;
+	}else{
+		return ((uint8_t)(USARTx->RDR & 0xFF));
+	}
+}
 
 void USART_Write(USART_TypeDef * USARTx, uint8_t *buffer, uint32_t nBytes) {
 	int i;

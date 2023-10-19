@@ -1,0 +1,26 @@
+/*
+ * hw4.c
+ *
+ *  Created on: Oct 19, 2023
+ *      Author: Marisa
+ */
+
+
+#include "UART.h"
+#include "systick.h"
+#include "printf.h"
+#include"LED.h"
+
+void run_hw4(){
+	char ch = "";
+	while(1){
+		ch = USART_Read_Nonblocking(USART2);
+		if(ch != ""){
+				printf("%c",ch);
+		}
+		init_systick();
+		delay_systick();
+		// Toggle LED
+		LED_Toggle(5);
+	}
+}

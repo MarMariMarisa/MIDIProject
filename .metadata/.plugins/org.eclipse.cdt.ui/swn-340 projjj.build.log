@@ -1,10 +1,10 @@
-12:29:09 **** Incremental Build of configuration Debug for project swn-340 projjj ****
+11:30:10 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
 arm-none-eabi-size   swn-340\ projjj.elf 
    text	   data	    bss	    dec	    hex	filename
-   5028	     92	   1908	   7028	   1b74	swn-340 projjj.elf
+   2412	     12	   1572	   3996	    f9c	swn-340 projjj.elf
 Finished building: default.size.stdout
  
 
-12:29:10 Build Finished. 0 errors, 0 warnings. (took 383ms)
+11:30:11 Build Finished. 0 errors, 0 warnings. (took 395ms)
 
