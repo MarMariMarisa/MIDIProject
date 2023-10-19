@@ -24,7 +24,7 @@ void run_hw4(){
 		// Toggle LED
 		//count to 10 then toggle led
 		cnt = cnt+1;
-		if(cnt == 10000){
+		if(cnt == 1000){
 		LED_Toggle(5);
 		cnt = 0;
 		}

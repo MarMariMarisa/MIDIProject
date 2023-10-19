@@ -16,7 +16,7 @@ void init_syst (){
     // Create an instance of systick
     printf ("0x%x\n", (unsigned int)SYST_TICK);
     // Set timer to 10 ms
-    SYST_TICK->RVR = 79999;
+    SYST_TICK->RVR = 7999999;
     // Turn on timer -
     SYST_TICK->CSR |= (1<<2); // Use pc source
     SYST_TICK->CSR |= (1<<0); // Enable
