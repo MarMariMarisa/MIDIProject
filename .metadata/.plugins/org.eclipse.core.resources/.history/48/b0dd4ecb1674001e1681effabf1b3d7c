@@ -1,0 +1,14 @@
+/*
+ * hexToDec.c
+ *
+ *  Created on: Oct 26, 2023
+ *      Author: Marisa
+ */
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
+#include <printf.h>
+
+
+
+

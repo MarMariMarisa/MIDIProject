@@ -1,6 +1,6 @@
-../Core/Src/project.c:23:6:next_song	832	static
-../Core/Src/project.c:109:6:play_song	8	static
-../Core/Src/project.c:112:6:stop_song	8	static
-../Core/Src/project.c:115:7:pause_song	24	static
-../Core/Src/project.c:146:6:take_input	24	static
+../Core/Src/project.c:27:6:next_song	304	static
+../Core/Src/project.c:88:6:play_song	8	static
+../Core/Src/project.c:91:6:stop_song	8	static
+../Core/Src/project.c:94:7:pause_song	64	dynamic
+../Core/Src/project.c:130:6:take_input	24	static
 ../Core/Src/project.c:177:6:init_player	8	static

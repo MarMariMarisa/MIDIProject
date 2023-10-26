@@ -6,19 +6,26 @@
 #include "SysClock.h"
 #include "LED.h"
 #include "UART.h"
-#include "demo.h"
 
 #include "printf.h"
-#include "hello_world.h"
-#include "project.h"
-#include "reader.h"
 #include "systick.h"
-#include "hw4.h"
+#include "project.h"
+#include "LED.h"
+#include "systick.h"
+#include "UART.h"
+#include "string.h"
+#include "stdio.h"
+#include "reader.h"
+#include "song.h"
+#include "stdlib.h"
+#include "math.h"
+#include "ctype.h"
+
+#define PIN_NUMBER 6
 int main(void){
 
 	// initialization code
 	System_Clock_Init(); // set System Clock = 80 MHz
-	LED_Init(5);
 	UART2_Init();
 	
 	init_player();

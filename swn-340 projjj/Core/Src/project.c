@@ -15,15 +15,19 @@
 #include "LED.h"
 #include "reader.h"
 #include "song.h"
-#include <stdlib.h>
-#define LED_PIN 5
+#include "stdlib.h"
+#include "math.h"
+#include "ctype.h"
+
+#define LED_PIN 6
 
 char BUFFER[128];
 int currentSongNum = -1;
+int currentState = 0;
 void next_song(){
 	//display next songs title and queue it
 	currentSongNum++;
-	if(currentSongNum == 6){
+	if(currentSongNum == 5){
 		currentSongNum = 0;
 	}
 	//title find
@@ -63,7 +67,6 @@ void next_song(){
 		if(song.p_song[i] == 77 && song.p_song[i+1] == 84 && song.p_song[i+2] == 114 && song.p_song[i+3] == 107 ){
 					mtrkCnt++;
 		}
-
 		i++;
 		if(mtrkCnt == 2){
 			break;
@@ -72,39 +75,15 @@ void next_song(){
 	if(mtrkCnt != 2){
 		numToCount = song.p_song[i+2];
 		i++;
-		for(int p = i; p<=numToCount+i+1;p++){
+		for(int p = i+2; p<=numToCount+i+1;p++){
 			songCopyright[copyrightIndex] = (char)(song.p_song[p]);
 			copyrightIndex++;
 		}
 	}
-	//tempo find
-	uint32_t songTempo[128];
-	uint32_t result = 120;
-	int tempoFound = 0;
-	int tempoIndex = 0;
-	numToCount = 0;
-	i = 0;
-	while(0==0){
-		if(song.p_song[i] == 81 && song.p_song[i+1] == 3){
-			tempoFound = 1;
-			break;
-		}
-		i++;
-		}
-	numToCount = 3;
-	i++;
-	if(tempoFound == 1){
-		songTempo[0] = 0;
-		for(int p = i+1; p<=numToCount+i+1;p++){
-			songTempo[tempoIndex] = song.p_song[p];
-			tempoIndex++;
-		}
-		result = (songTempo[0]<<16)| (songTempo[1]<<8) | songTempo[2];
-	}
-	printf("\n\r%d",strtol(result, NULL, 16));
 	printf("\r\n%s","Current Song:");
 	printf("\r\n%s%s","Song Title: ",songTitle);
-	printf("\r\n%s%s","Copyright: ",songCopyright);
+	printf("\r\n%s%s","Song Copyright: ",songCopyright);
+
 }
 void play_song(){
 	LED_On(LED_PIN);
@@ -117,12 +96,13 @@ char* pause_song(){
 	int cnt = 0;
 	int index = 0;
 	char ch = 0;
-	while(1          ){
+	int going = 1;
+	while(going == 1){
 		cnt++;
 		ch = USART_Read_Nonblocking(USART2);
 		if(ch == '\r'){
-			break;
-		}
+			going = 0;
+		}else{
 		if(ch != 0){
 			printf("%c",ch);
 			BUFFER[index] = ch;
@@ -133,53 +113,75 @@ char* pause_song(){
 		// Toggle LED
 		//count to 10 then toggle led
 		if(cnt == 1000){
-			LED_Toggle(5);
+			LED_Toggle(LED_PIN);
 			cnt = 0;
+		}
 		}
 	}
 	printf("\r\n");
-	LED_Off(LED_PIN);
-	BUFFER[index - 1] = 0;
-	return BUFFER;
+	BUFFER[index] = 0;
+	char* toReturn[index];
+	for(int x = 0;x< index;x++){
+		*toReturn[x] = BUFFER[x];
+	}
+	return toReturn;
 }
 
-void take_input(char* initialInput){
-	char* input = 0;
-	if(initialInput == NULL){
-		input = read_line();
+void take_input(char initialInput){
+
+	if(currentState == 0){
+		LED_Off(LED_PIN);
+	}else{
+		LED_On(LED_PIN);
 	}
+	char* input = 0;
+	if(initialInput == 0){
+		input = read_line();
+		initialInput = *input;
+	}
+	*input = initialInput;
 	if(strcmp(input,"NEXT") == 0){
 		next_song();
 		printf("\r\n");
+
 	}
 	else if(strcmp(input,"PLAY") == 0){
 		play_song();
 		printf("\r\n");
-	}
-	else if(strcmp(input,"PAUSE") == 0){
-		printf("\r\n");
-		char * pausedI = pause_song();
-		take_input(pausedI);
 
 	}
 	else if(strcmp(input,"STOP") == 0){
 		stop_song();
 		printf("\r\n");
+
 	}
 	else if(strcmp(input,"HELP") == 0){
 		printf("\n\rAvailable User Commands\n\rNEXT - Show next song info\n\rPLAY - Play the song (LED on)\n\rPAUSE - Pause the song (LED flash)\n\rSTOP - Stop the song (LED off)\n\r");
 	}
+	else if(strcmp(input,"PAUSE") == 0){
+		printf("\r\n");
+		char* pausedI = pause_song();
+		if(strcmp(pausedI,"PLAY") == 0){
+			currentState = 1;
+		}
+		if(strcmp(pausedI,"STOP") == 0){
+					currentState = 0;
+				}
+		take_input(*pausedI);
+	}
 	else{
-		printf("Invalid Input");
+		printf("\r\nInvalid Input");
 		printf("\r\n");
 	}
 }
 void init_player(){
+	LED_Init(LED_PIN);
 	printf("Available User Commands\n\rNEXT - Show next song info\n\rPLAY - Play the song (LED on)\n\rPAUSE - Pause the song (LED flash)\n\rSTOP - Stop the song (LED off)\n\r");
 	while(0 == 0){
-		take_input(NULL);
+		take_input(0);
 	}
 }
+
 
 
 

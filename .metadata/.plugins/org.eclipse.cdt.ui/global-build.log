@@ -1,38 +1,19 @@
-01:19:09 **** Incremental Build of configuration Debug for project swn-340 projjj ****
+12:27:59 **** Incremental Build of configuration Debug for project swn-340 projjj ****
 make -j20 all 
 arm-none-eabi-gcc "../Core/Src/project.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/project.d" -MT"Core/Src/project.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/project.o"
-../Core/Src/project.c: In function 'next_song':
-../Core/Src/project.c:104:32: warning: passing argument 1 of 'strtol' makes pointer from integer without a cast [-Wint-conversion]
-  104 |         printf("\n\r%d",strtol(result, NULL, 16));
-      |                                ^~~~~~
-      |                                |
-      |                                uint32_t {aka long unsigned int}
-In file included from ../Core/Src/project.c:18:
-C:\ST\STM32CubeIDE_1.13.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.0.202305231506\tools\bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/include/stdlib.h:171:40: note: expected 'const char * restrict' but argument is of type 'uint32_t' {aka 'long unsigned int'}
-  171 | long    strtol (const char *__restrict __n, char **__restrict __end_PTR, int __base);
-      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~
-../Core/Src/project.c:104:22: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
-  104 |         printf("\n\r%d",strtol(result, NULL, 16));
-      |                     ~^  ~~~~~~~~~~~~~~~~~~~~~~~~
-      |                      |  |
-      |                      |  long int
-      |                      int
-      |                     %ld
+../Core/Src/project.c: In function 'pause_song':
+../Core/Src/project.c:127:16: warning: returning 'char **' from a function with incompatible return type 'char *' [-Wincompatible-pointer-types]
+  127 |         return toReturn;
+      |                ^~~~~~~~
+../Core/Src/project.c:127:16: warning: function returns address of local variable [-Wreturn-local-addr]
 arm-none-eabi-gcc -o "swn-340 projjj.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\swn-340 projjj\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="swn-340 projjj.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: swn-340 projjj.elf
  
 arm-none-eabi-size   swn-340\ projjj.elf 
 arm-none-eabi-objdump -h -S  swn-340\ projjj.elf  > "swn-340 projjj.list"
    text	   data	    bss	    dec	    hex	filename
-   7796	  31532	   2292	  41620	   a294	swn-340 projjj.elf
+   7204	  31532	   2292	  41028	   a044	swn-340 projjj.elf
 Finished building: default.size.stdout
  
 Finished building: swn-340 projjj.list
- 
-01:19:13 **** Incremental Build of configuration Debug for project swn-340 projjj ****
-make -j20 all 
-arm-none-eabi-size   swn-340\ projjj.elf 
-   text	   data	    bss	    dec	    hex	filename
-   7796	  31532	   2292	  41620	   a294	swn-340 projjj.elf
-Finished building: default.size.stdout
  
