@@ -23,6 +23,7 @@
 
 char BUFFER[128];
 int currentSongNum = -1;
+int currentState = 0;
 void next_song(){
 	//display next songs title and queue it
 	currentSongNum++;
@@ -131,6 +132,12 @@ char* pause_song(){
 }
 
 void take_input(char initialInput){
+	//check current state set led accordingly
+	if(currentState == 0){
+		LED_Off(LED_PIN);
+	}else{
+		LED_On(LED_PIN);
+	}
 	char* input = 0;
 	//if inital input exists set input equal to
 	if(initialInput == 0){
@@ -160,6 +167,12 @@ void take_input(char initialInput){
 	else if(strcmp(input,"PAUSE") == 0){
 		printf("\r\n");
 		char* pausedI = pause_song();
+		if(strcmp(pausedI,"PLAY") == 0){
+			currentState = 1;
+		}
+		if(strcmp(pausedI,"STOP") == 0){
+					currentState = 0;
+				}
 		take_input(*pausedI);
 	}
 	//if no command was entered print invalid
