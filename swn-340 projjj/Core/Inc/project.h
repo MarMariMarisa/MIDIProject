@@ -12,3 +12,10 @@ void print_f_sample();
 void run_project ();
 
 #endif /* INC_PROJECT_H_ */
+
+void init_player();
+void take_input(char* input);
+void play_song();
+char* pause_song();
+void stop_song();
+void next_song();

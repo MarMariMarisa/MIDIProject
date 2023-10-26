@@ -19,6 +19,7 @@ int puts (const char* string){
 
 int putchar (int chr){
     print_string ((char*)&chr, 1);
+    return chr;
 }
 
 int printf (const char* format, ...) {

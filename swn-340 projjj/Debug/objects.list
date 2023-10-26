@@ -15,7 +15,6 @@
 "./Core/Src/system/syscalls.o"
 "./Core/Src/system/sysmem.o"
 "./Core/Src/system/system_stm32l4xx.o"
-"./Core/Src/tests/hello_world.o"
 "./Core/Src/tests/hw4.o"
 "./Core/Src/tests/main.o"
 "./Core/Src/tests/reader.o"

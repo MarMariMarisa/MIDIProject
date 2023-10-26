@@ -9,7 +9,6 @@
 #include "UART.h"
 #include "printf.h"
 #include "LED.h"
-
 static char BUFFER[128];
 
 char* read_line(){
@@ -18,9 +17,12 @@ char* read_line(){
 	int index = 0;
 	char ch = 0;
 	while(ch != '\r'){
-		ch = (char)USART_Read(USART2);
-		BUFFER[index] = ch;
-		index++;
+		ch = (char)USART_Read_Nonblocking(USART2);
+		if(ch != '\0'){
+			printf("%c",ch);
+			BUFFER[index] = ch;
+			index++;
+		}
 	}
 	BUFFER[index - 1] = 0;
 	return BUFFER;

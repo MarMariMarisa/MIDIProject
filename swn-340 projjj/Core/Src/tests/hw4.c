@@ -14,8 +14,11 @@
 void run_hw4(){
 	init_systick();
 	int cnt = 0;
+	int index = 0;
 	while(1){
+		cnt++;
 		char ch = USART_Read_Nonblocking(USART2);
+
 		if(ch != 0){
 			printf("%c",ch);
 		}
@@ -23,10 +26,9 @@ void run_hw4(){
 		delay_systick();
 		// Toggle LED
 		//count to 10 then toggle led
-		cnt = cnt+1;
-		if(cnt == 10000){
-		LED_Toggle(5);
-		cnt = 0;
+		if(cnt == 100){
+			LED_Toggle(5);
+			cnt = 0;
 		}
 	}
 }
