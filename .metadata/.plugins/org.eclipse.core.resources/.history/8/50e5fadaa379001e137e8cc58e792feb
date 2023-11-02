@@ -14,11 +14,10 @@
 
 void software_led(){
 	GPIO_Init();
+	LED_On(6);
 	while(1){
 		if(GPIOA->IDR & (1 << 9)){
-			LED_On(6);
-		}else{
-			LED_Off(6);
-		}
+			LED_Toggle(6);
+	}
 }
 }

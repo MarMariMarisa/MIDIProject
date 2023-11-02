@@ -14,11 +14,10 @@
 
 void software_led(){
 	GPIO_Init();
+	LED_On(PIN_NUMBER);
 	while(1){
-		if(GPIOA->IDR & (1 << 9)){
-			LED_On(6);
-		}else{
-			LED_Off(6);
-		}
-}
+//		if(HAL_GPIO_ReadPin(GPIO_PIN_9) == 1){
+//			LED_Toggle(6);
+
+	}
 }
