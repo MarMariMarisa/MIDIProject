@@ -144,19 +144,23 @@ void take_input(char initialInput){
 		printf("\r\n");
 
 	}
+	//call play song
 	else if(strcmp(input,"PLAY") == 0){
 		play_song();
 		printf("\r\n");
 
 	}
+	//call play stop
 	else if(strcmp(input,"STOP") == 0){
 		stop_song();
 		printf("\r\n");
 
 	}
+	//call play help
 	else if(strcmp(input,"HELP") == 0){
-		printf("\n\rAvailable User Commands\n\rNEXT - Show next song info\n\rPLAY - Play the song (LED on)\n\rPAUSE - Pause the song (LED flash)\n\rSTOP - Stop the song (LED off)\n\r");
+		printf("\n\rAvail9able User Commands\n\rNEXT - Show next song info\n\rPLAY - Play the song (LED on)\n\rPAUSE - Pause the song (LED flash)\n\rSTOP - Stop the song (LED off)\n\r");
 	}
+	//call play pause
 	else if(strcmp(input,"PAUSE") == 0){
 		printf("\r\n");
 		char* pausedI = pause_song();

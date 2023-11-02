@@ -1,0 +1,13 @@
+/*
+ * project.c
+ *
+ *  Created on: Jan 8, 2023
+ *      Author: bruce
+ */
+
+#include "project.h"
+#include "printf.h"
+
+void init_player(){
+	printf("Available User Commands\nNEXT - Show next song info\nPLAY - Play the song (LED on)\nPAUSE - Pause the song (LED flash)\nSTOP - Stop the song (LED off");
+}

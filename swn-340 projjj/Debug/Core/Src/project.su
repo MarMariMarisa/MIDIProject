@@ -3,4 +3,4 @@
 ../Core/Src/project.c:94:6:stop_song	8	static
 ../Core/Src/project.c:97:7:pause_song	64	dynamic
 ../Core/Src/project.c:133:6:take_input	24	static
-../Core/Src/project.c:171:6:init_player	8	static
+../Core/Src/project.c:175:6:init_player	8	static

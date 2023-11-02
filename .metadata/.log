@@ -2786,3 +2786,33 @@ Reason: (12) Unknown. Please check power and cabling to target.
 !SUBENTRY 2 com.st.stm32cube.ide.mcu.debug.stlink 4 0 2023-10-26 12:39:00.864
 !MESSAGE Error in initializing ST-LINK device.
 Reason: (12) Unknown. Please check power and cabling to target.
+!SESSION 2023-10-27 21:33:24.823 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-10-27 21:34:01.002
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-10-27 21:34:01.006
+!MESSAGE Log4j2 initialized with config file C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-10-27 21:34:24.247
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2023-11-02 12:31:41.008 -----------------------------------------------
+eclipse.buildId=Version 1.13.1
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-11-02 12:31:59.930
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-11-02 12:31:59.931
+!MESSAGE Log4j2 initialized with config file C:\Users\Marisa\OneDrive\Desktop\SchoolStuff\SWEN-340\course-repo-MarMariMarisa\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-11-02 12:32:09.854
+!MESSAGE Started RMI Server, listening on port 41337

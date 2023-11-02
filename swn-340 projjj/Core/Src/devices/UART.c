@@ -27,7 +27,6 @@ void UART2_Init(void) {
 	//NVIC_SetPriority(USART2_IRQn, 0);			// Set Priority to 1
 	//NVIC_EnableIRQ(USART2_IRQn);					// Enable interrupt of USART1 peripheral
 }
-
 void UART2_GPIO_Init(void) {
 	
 	// Enable the peripheral clock of GPIO Port

@@ -1,0 +1,42 @@
+/*
+ * project.c
+ *
+ *  Created on: Jan 8, 2023
+ *      Author: bruce
+ */
+
+#include "project.h"
+#include "printf.h"
+#include "LED.h"
+#include "systick.h"
+#include "UART.h"
+#include "string.h"
+static char BUFFER[128];
+
+void init_player(){
+	printf("Available User Commands\n\rNEXT - Show next song info\n\rPLAY - Play the song (LED on)\n\rPAUSE - Pause the song (LED flash)\n\rSTOP - Stop the song (LED off)\n\r");
+	int cnt = 0;
+	char* input = 0;
+	int index = 0;
+	while(1==1){
+		cnt++;
+		char ch = USART_Read_Nonblocking(USART2);
+		BUFFER[index] = ch;
+		index++;
+		if(ch != 0){
+			printf("%c",ch);
+		}
+		if( ch == '\r'){
+			BUFFER[index - 1] = 0;
+			input = BUFFER;
+			printf("%d",BUFFER);
+			if(strcmp(input,"NEXT") == 0){
+				printf("\n\r%s","i am here!!!!");
+			}
+			index = 0;
+		}
+	}
+}
+
+
+

@@ -20,6 +20,7 @@
 #include "stdlib.h"
 #include "math.h"
 #include "ctype.h"
+#include "led_soft_test.h"
 
 #define PIN_NUMBER 6
 int main(void){
@@ -27,8 +28,10 @@ int main(void){
 	// initialization code
 	System_Clock_Init(); // set System Clock = 80 MHz
 	UART2_Init();
-	
-	init_player();
+	LED_Init(PIN_NUMBER);
+	software_led();
+
+//	init_player();
 
 }
 
