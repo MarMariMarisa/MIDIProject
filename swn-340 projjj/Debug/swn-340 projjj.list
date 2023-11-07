@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_rnglists 0000014b  00000000  00000000  00013b28  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00025c0c  00000000  00000000  00013c73  2**0
+ 17 .debug_macro  00025c12  00000000  00000000  00013c73  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   000044c1  00000000  00000000  0003987f  2**0
+ 18 .debug_line   000044c1  00000000  00000000  00039885  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000f4c01  00000000  00000000  0003dd40  2**0
+ 19 .debug_str    000f4c01  00000000  00000000  0003dd46  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  0000050c  00000000  00000000  00132944  2**2
+ 20 .debug_frame  0000050c  00000000  00000000  00132948  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000008d  00000000  00000000  00132e50  2**0
+ 21 .debug_line_str 0000008d  00000000  00000000  00132e54  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1033,12 +1033,12 @@ void software_led(){
  80007f2:	f403 7300 	and.w	r3, r3, #512	; 0x200
  80007f6:	2b00      	cmp	r3, #0
  80007f8:	d003      	beq.n	8000802 <software_led+0x1e>
-			LED_On(6);
+			LED_On(EXTERN_LED);
  80007fa:	2006      	movs	r0, #6
  80007fc:	f7ff fdbe 	bl	800037c <LED_On>
  8000800:	e7f4      	b.n	80007ec <software_led+0x8>
 		}else{
-			LED_Off(6);
+			LED_Off(EXTERN_LED);
  8000802:	2006      	movs	r0, #6
  8000804:	f7ff fdd0 	bl	80003a8 <LED_Off>
 		if(GPIOA->IDR & (1 << 9)){
@@ -1048,8 +1048,8 @@ void software_led(){
 #include "math.h"
 #include "ctype.h"
 #include "led_soft_test.h"
+#define EXTERN_LED 6
 
-#define PIN_NUMBER 6
 int main(void){
  800080a:	b580      	push	{r7, lr}
  800080c:	af00      	add	r7, sp, #0
@@ -1059,7 +1059,7 @@ int main(void){
  800080e:	f7ff fde3 	bl	80003d8 <System_Clock_Init>
 	UART2_Init();
  8000812:	f7ff febf 	bl	8000594 <UART2_Init>
-	LED_Init(PIN_NUMBER);
+	LED_Init(EXTERN_LED);
  8000816:	2006      	movs	r0, #6
  8000818:	f7ff fd52 	bl	80002c0 <LED_Init>
 

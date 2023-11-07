@@ -16,9 +16,9 @@ void software_led(){
 	GPIO_Init();
 	while(1){
 		if(GPIOA->IDR & (1 << 9)){
-			LED_On(6);
+			LED_On(EXTERN_LED);
 		}else{
-			LED_Off(6);
+			LED_Off(EXTERN_LED);
 		}
 }
 }

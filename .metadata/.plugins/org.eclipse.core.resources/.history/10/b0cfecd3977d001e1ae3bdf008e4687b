@@ -1,0 +1,31 @@
+/*
+ * clock.c
+ *
+ *  Created on: Nov 7, 2023
+ *      Author: Marisa
+ */
+
+void SysTick_Handler(){
+	SYST->CTRL ^=
+    init_syst ();
+    // Display num seconds since started, once a second
+//    int count = 0;
+//    int seconds = 0;
+//    if ((SYST_TICK->CSR >> 16) == 1) {
+//          count++;
+//          if (count == 10){
+//           (SYST_TICK->CTRL << 16) = 1;
+//              seconds++;
+//              count = 0;
+//              printf ("%d\n", seconds);
+//           }
+//       }
+}
+//configure systick to use interupts
+//count to one second
+//updates seconds
+//prints seconds
+
+void clock(){
+	init_syst();
+}

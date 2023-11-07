@@ -29,6 +29,7 @@ struct SYST* init_systick(){
 	    SYST_TICK->RVR = 79999;
 	    //Set to internal clock
 	    SYST_TICK->CSR |= (1<<2); // Use pc source
+	    SYST_TICK->CSR |= (1<<1);
 	    //Enable timer
 	    SYST_TICK->CSR |= (1<<0); // Enable
 	    return SYST_TICK;
