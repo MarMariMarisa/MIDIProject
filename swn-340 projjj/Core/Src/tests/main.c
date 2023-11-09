@@ -20,7 +20,9 @@
 #include "stdlib.h"
 #include "math.h"
 #include "ctype.h"
+#include "clock.h"
 #include "led_soft_test.h"
+#include "echo.h"
 #define EXTERN_LED 6
 
 int main(void){
@@ -29,8 +31,11 @@ int main(void){
 	System_Clock_Init(); // set System Clock = 80 MHz
 	UART2_Init();
 	LED_Init(EXTERN_LED);
-
-	software_led();
+	while(1){
+	USART2_IRQHandler();
+	}
+//	clock();
+//	software_led();
 
 //	init_player();
 

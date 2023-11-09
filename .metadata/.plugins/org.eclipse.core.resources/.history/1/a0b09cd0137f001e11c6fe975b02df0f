@@ -1,0 +1,17 @@
+/*
+ * echo.c
+ *
+ *  Created on: Nov 9, 2023
+ *      Author: Marisa
+ */
+
+#include "UART.h"
+void USART2_IRQHandler(void){
+	RXNE_EnableIRQ(USART2);
+	uint32_t status = USART(USART2);
+	   if (status & USART->CSR.RXNE) {
+	       uint32_t received_byte;
+	       usart_read(USART_SERIAL, &received_byte);
+	       usart_write(USART_SERIAL, received_byte);
+	   }
+}

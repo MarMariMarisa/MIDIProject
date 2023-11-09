@@ -16,7 +16,6 @@ RM := rm -rf
 -include Core/Src/midi/subdir.mk
 -include Core/Src/devices/subdir.mk
 -include Core/Src/demos/subdir.mk
--include Core/Src/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

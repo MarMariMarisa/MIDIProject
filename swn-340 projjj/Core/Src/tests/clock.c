@@ -5,9 +5,12 @@
  *      Author: Marisa
  */
 
+#include "printf.h"
+#include "systick.h"
+#include "clock.h"
 int count = 0;
 
-void SysTick_Handler(){
+void SysTic_Handler(){
 	count++;
 }
 //configure systick to use interupts
@@ -16,10 +19,20 @@ void SysTick_Handler(){
 //prints seconds
 
 void clock(){
-	init_syst();
+	init_systick();
 	int seconds = 0;
-	while(count < 10){
-		printf("%d\r\n",seconds);
-		SysTick_Handler();
+	printf("\r\n%s","I AM HERER");
+	while(1){
+
+		printf("\r\n%s","I AM");
+		if(count == 10){
+			seconds++;
+			int hours = seconds /3600;
+			int minutes = seconds / 60 % 60;
+			printf("\r\n%s","I AM HERER");
+			printf("%02d:%02d:%02d\r",hours,minutes,seconds%60);
+			count = 0;
+		}
+		SysTic_Handler();
 	}
 }

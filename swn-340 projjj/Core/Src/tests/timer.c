@@ -23,7 +23,7 @@ void init_syst (){
 }
 
 
-void clock () {
+void clock() {
     init_syst ();
     // Display num seconds since started, once a second
     int count = 0;

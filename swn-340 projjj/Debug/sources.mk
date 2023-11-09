@@ -25,7 +25,6 @@ SUBDIRS := \
 Core/Src/demos \
 Core/Src/devices \
 Core/Src/midi \
-Core/Src \
 Core/Src/system \
 Core/Src/tests \
 Core/Startup \

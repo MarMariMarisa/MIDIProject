@@ -5,15 +5,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/demos/adc_dac_demo.c \
 ../Core/Src/demos/demo.c 
 
 OBJS += \
-./Core/Src/demos/adc_dac_demo.o \
 ./Core/Src/demos/demo.o 
 
 C_DEPS += \
-./Core/Src/demos/adc_dac_demo.d \
 ./Core/Src/demos/demo.d 
 
 
@@ -24,7 +21,7 @@ Core/Src/demos/%.o Core/Src/demos/%.su Core/Src/demos/%.cyclo: ../Core/Src/demos
 clean: clean-Core-2f-Src-2f-demos
 
 clean-Core-2f-Src-2f-demos:
-	-$(RM) ./Core/Src/demos/adc_dac_demo.cyclo ./Core/Src/demos/adc_dac_demo.d ./Core/Src/demos/adc_dac_demo.o ./Core/Src/demos/adc_dac_demo.su ./Core/Src/demos/demo.cyclo ./Core/Src/demos/demo.d ./Core/Src/demos/demo.o ./Core/Src/demos/demo.su
+	-$(RM) ./Core/Src/demos/demo.cyclo ./Core/Src/demos/demo.d ./Core/Src/demos/demo.o ./Core/Src/demos/demo.su
 
 .PHONY: clean-Core-2f-Src-2f-demos
 
