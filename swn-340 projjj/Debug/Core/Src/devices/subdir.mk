@@ -10,7 +10,8 @@ C_SRCS += \
 ../Core/Src/devices/SysClock.c \
 ../Core/Src/devices/UART.c \
 ../Core/Src/devices/adc.c \
-../Core/Src/devices/dac.c 
+../Core/Src/devices/dac.c \
+../Core/Src/devices/timer.c 
 
 OBJS += \
 ./Core/Src/devices/GPIO.o \
@@ -18,7 +19,8 @@ OBJS += \
 ./Core/Src/devices/SysClock.o \
 ./Core/Src/devices/UART.o \
 ./Core/Src/devices/adc.o \
-./Core/Src/devices/dac.o 
+./Core/Src/devices/dac.o \
+./Core/Src/devices/timer.o 
 
 C_DEPS += \
 ./Core/Src/devices/GPIO.d \
@@ -26,7 +28,8 @@ C_DEPS += \
 ./Core/Src/devices/SysClock.d \
 ./Core/Src/devices/UART.d \
 ./Core/Src/devices/adc.d \
-./Core/Src/devices/dac.d 
+./Core/Src/devices/dac.d \
+./Core/Src/devices/timer.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -36,7 +39,7 @@ Core/Src/devices/%.o Core/Src/devices/%.su Core/Src/devices/%.cyclo: ../Core/Src
 clean: clean-Core-2f-Src-2f-devices
 
 clean-Core-2f-Src-2f-devices:
-	-$(RM) ./Core/Src/devices/GPIO.cyclo ./Core/Src/devices/GPIO.d ./Core/Src/devices/GPIO.o ./Core/Src/devices/GPIO.su ./Core/Src/devices/LED.cyclo ./Core/Src/devices/LED.d ./Core/Src/devices/LED.o ./Core/Src/devices/LED.su ./Core/Src/devices/SysClock.cyclo ./Core/Src/devices/SysClock.d ./Core/Src/devices/SysClock.o ./Core/Src/devices/SysClock.su ./Core/Src/devices/UART.cyclo ./Core/Src/devices/UART.d ./Core/Src/devices/UART.o ./Core/Src/devices/UART.su ./Core/Src/devices/adc.cyclo ./Core/Src/devices/adc.d ./Core/Src/devices/adc.o ./Core/Src/devices/adc.su ./Core/Src/devices/dac.cyclo ./Core/Src/devices/dac.d ./Core/Src/devices/dac.o ./Core/Src/devices/dac.su
+	-$(RM) ./Core/Src/devices/GPIO.cyclo ./Core/Src/devices/GPIO.d ./Core/Src/devices/GPIO.o ./Core/Src/devices/GPIO.su ./Core/Src/devices/LED.cyclo ./Core/Src/devices/LED.d ./Core/Src/devices/LED.o ./Core/Src/devices/LED.su ./Core/Src/devices/SysClock.cyclo ./Core/Src/devices/SysClock.d ./Core/Src/devices/SysClock.o ./Core/Src/devices/SysClock.su ./Core/Src/devices/UART.cyclo ./Core/Src/devices/UART.d ./Core/Src/devices/UART.o ./Core/Src/devices/UART.su ./Core/Src/devices/adc.cyclo ./Core/Src/devices/adc.d ./Core/Src/devices/adc.o ./Core/Src/devices/adc.su ./Core/Src/devices/dac.cyclo ./Core/Src/devices/dac.d ./Core/Src/devices/dac.o ./Core/Src/devices/dac.su ./Core/Src/devices/timer.cyclo ./Core/Src/devices/timer.d ./Core/Src/devices/timer.o ./Core/Src/devices/timer.su
 
 .PHONY: clean-Core-2f-Src-2f-devices
 

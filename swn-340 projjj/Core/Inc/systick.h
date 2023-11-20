@@ -11,6 +11,8 @@
 #include "stm32l476xx.h"
 #include "stdint.h"
 
+
+
 //create struct to hold the systic registers
 
 struct SYST{
@@ -19,6 +21,7 @@ struct SYST{
 	uint32_t CVR;
 	uint32_t CALIB;
 };
+extern struct SYST* SYST_TICK;
 
 
 // This function is to Initialize SysTick registers

@@ -1,0 +1,87 @@
+/*
+ * interruptHandlers.c
+ *
+ *  Created on: Nov 15, 2023
+ *      Author: Marisa
+ */
+
+#include "project.h"
+#include "UART.h"
+#include "printf.h"
+#include "stm32l4xx.h"
+#include "stdint.h"
+#include "systick.h"
+#include "timer.h"
+#include "led.h"
+#include "main.h"
+#include "GPIO.h"
+
+extern uint32_t buttonPressCount = 0;
+uint32_t ticks = 0;
+extern uint32_t lastButtonPressTime;
+
+
+void USART2_IRQHandler(void){
+	uint8_t ch = USART_Read(USART2);
+	BUFFER[0] = ch;
+	printf("%c",ch);
+}
+void SysTick_Handler(void) {
+    ticks++;  // Increment the counter on each SysTick interrupt
+}
+
+void EXTI15_10_IRQHandler(void){
+	isRemote = !isRemote;
+	LED_Off(EXTERN_LED);
+	mode_print();
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+}
+
+
+void EXTI9_5_IRQHandler(void) {
+    printf("\r\n%s\r\n", "NEW INTERRUPT");
+
+    // Assuming you have a function to initialize the SysTick timer
+    init_systick();
+
+    // Assuming you have a function to handle EXTI interrupt for S1_Pin
+    HAL_GPIO_EXTI_IRQHandler(S1_Pin);
+
+    uint32_t currentTime = ticks;
+
+    // Calculate time elapsed since the last button press
+    uint32_t timeSinceLastPress = currentTime - lastButtonPressTime;
+
+    // Update the timestamp of the last button press
+    lastButtonPressTime = currentTime;
+
+    // Check if the time since the last button press is within one second
+    if (timeSinceLastPress <= 1000) {
+        // Increment the button press count
+        buttonPressCount++;
+    } else {
+        // Reset the button press count if more than one second has passed
+        buttonPressCount = 1;
+    }
+
+    // Wait for the button to be released
+    while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET) {
+    }
+
+    // Do other processing as needed
+
+    // Add a delay before printing the button press count
+    for (int i = 0; i < 1000; i++) {
+        delay_systick();
+    }
+
+    printf("\r\n%d\r\n", buttonPressCount);
+
+    if (isRemote == 0) {
+        if (timeSinceLastPress > 1000) {
+            stop_song();
+        } else {
+            play_song();
+        }
+    }
+}

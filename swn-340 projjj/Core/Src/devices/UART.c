@@ -24,8 +24,8 @@ void UART2_Init(void) {
 	UART2_GPIO_Init();
 	USART_Init(USART2);
 	
-	//NVIC_SetPriority(USART2_IRQn, 0);			// Set Priority to 1
-	NVIC_EnableIRQ(USART2_IRQn);					// Enable interrupt of USART1 peripheral
+//	NVIC_SetPriority(USART2_IRQn, 0);			// Set Priority to 1
+//	NVIC_EnableIRQ(USART2_IRQn);					// Enable interrupt of USART1 peripheral
 }
 void UART2_GPIO_Init(void) {
 	

@@ -22,7 +22,8 @@
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
-#define EXTERN_LED 6
+extern int EXTERN_LED;
+
 
 #ifdef __cplusplus
 extern "C" {

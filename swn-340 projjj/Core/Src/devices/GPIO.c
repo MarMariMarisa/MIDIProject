@@ -39,12 +39,17 @@ void GPIO_Init(void)
 	HAL_GPIO_Init(S1_GPIO_Port, &GPIO_InitStruct);
 
 	/* EXTI15_10_IRQn interrupt init*/
-	// Note you will have to add EXTI15_10_IRQn Interrupt handler function as well
+	// Note you will ahave to add EXTI15_10_IRQn Interrupt handler function as well
 	// This is the interrupt handler for the blue button
+	HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 
 	/* EXTI9_5_IRQn interrupt init*/
 	// Note you will have to add EXTI9_15_IRQn Interrupt handler function as well
 	// This is the interrupt handler for the external buttons (S1)
+	HAL_NVIC_SetPriority(EXTI9_5_IRQn, 1, 0);
+	HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
 }
 

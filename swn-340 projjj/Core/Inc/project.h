@@ -8,14 +8,21 @@
 #ifndef INC_PROJECT_H_
 #define INC_PROJECT_H_
 
+extern volatile int isRemote;
+
 void print_f_sample();
 void run_project ();
+extern volatile int PLAY_PAUSE_TOG;
+extern char BUFFER[];
+extern int volatile lightState;
 
 #endif /* INC_PROJECT_H_ */
 
 void init_player();
-void take_input(char input);
+void take_input_remote(char input);
+void take_input_local();
 void play_song();
 char* pause_song();
 void stop_song();
 void next_song();
+void mode_print();

@@ -1,0 +1,71 @@
+/*
+ * interruptHandlers.c
+ *
+ *  Created on: Nov 15, 2023
+ *      Author: Marisa
+ */
+
+#include "project.h"
+#include "UART.h"
+#include "printf.h"
+#include "stm32l4xx.h"
+#include "stdint.h"
+#include "systick.h"
+#include "timer.h"
+#include "led.h"
+#include "main.h"
+#include "GPIO.h"
+
+uint32_t buttonPressCount = 0;
+uint32_t ticks = 0;
+uint32_t lastButtonPressTime;
+
+
+void USART2_IRQHandler(void){
+	uint8_t ch = USART_Read(USART2);
+	BUFFER[0] = ch;
+	printf("%c",ch);
+}
+void SysTick_Handler(void) {
+    ticks++;  // Increment the counter on each SysTick interrupt
+}
+
+void EXTI15_10_IRQHandler(void){
+	isRemote = !isRemote;
+	lightState = 0;
+	LED_Off(EXTERN_LED);
+	mode_print();
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+}
+
+
+void EXTI9_5_IRQHandler(void) {
+	printf("\r\n%s\r\n","NEW INTERRUPT");
+	init_systick();
+	buttonPressCount++;
+    uint32_t startTime = ticks;
+    uint32_t timeSinceLastPress = startTime - lastButtonPressTime;
+    if (timeSinceLastPress <= 1000) {
+    	buttonPressCount++;
+    } else {
+        buttonPressCount = 1;
+    }
+    lastButtonPressTime = startTime;
+	while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_9) == GPIO_PIN_SET) {
+	}
+	uint32_t elapsed = ticks - startTime;
+	for(int i = 0;i < 1000;i++){delay_systick();};
+	printf("\r\n%ld\r\n",buttonPressCount);
+    if (isRemote == 0) {
+            if (elapsed > 1000) {
+                stop_song();
+            } else {
+            		if(PLAY_PAUSE_TOG == 0){
+            			play_song();
+            		}else{
+            			lightState = 2;
+            		}
+            }
+    }
+	HAL_GPIO_EXTI_IRQHandler(S1_Pin);
+}

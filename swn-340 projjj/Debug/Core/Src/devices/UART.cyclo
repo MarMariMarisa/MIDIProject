@@ -1,4 +1,3 @@
-../Drivers/CMSIS/Include/core_cm4.h:1679:22:__NVIC_EnableIRQ	2
 ../Core/Src/devices/UART.c:12:6:UART2_Init	1
 ../Core/Src/devices/UART.c:30:6:UART2_GPIO_Init	1
 ../Core/Src/devices/UART.c:54:6:USART_Init	5

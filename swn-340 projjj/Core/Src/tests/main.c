@@ -6,36 +6,29 @@
 #include "SysClock.h"
 #include "LED.h"
 #include "UART.h"
-
 #include "printf.h"
 #include "systick.h"
 #include "project.h"
-#include "LED.h"
-#include "systick.h"
-#include "UART.h"
-#include "string.h"
 #include "stdio.h"
-#include "reader.h"
-#include "song.h"
 #include "stdlib.h"
-#include "math.h"
 #include "ctype.h"
 #include "clock.h"
-#include "led_soft_test.h"
-#include "echo.h"
-#define EXTERN_LED 6
+#include "GPIO.h"
+#include "interruptHandlers.h"
+#include "stm32l4xx_hal.h"
+#include "timer.h"
+
+int EXTERN_LED = 6;
 
 int main(void){
-
 	// initialization code
 	System_Clock_Init(); // set System Clock = 80 MHz
-	UART2_Init();
+	UART2_Init ();
 	LED_Init(EXTERN_LED);
-	USART2_IRQHandler();
-//	clock();
-//	software_led();
-
-//	init_player();
+	init_syst();
+	GPIO_Init();
+	mode_print();
+	init_player();
 
 }
 

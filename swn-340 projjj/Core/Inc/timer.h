@@ -13,3 +13,4 @@
 #endif /* CORE_INC_TIMER_H_ */
 
 void init_syst();
+uint32_t millis();
