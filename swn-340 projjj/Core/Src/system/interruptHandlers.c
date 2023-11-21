@@ -47,7 +47,6 @@ void EXTI15_10_IRQHandler(void){
 
 // EXTI9_5 interrupt handler
 void EXTI9_5_IRQHandler(void) {
-	printf("\r\n%s\r\n","new interrupt");
     // Initialize SysTick timer
     init_systick();
 
