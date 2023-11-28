@@ -1,0 +1,19 @@
+/*
+ * led_soft_test.c
+ *
+ *  Created on: Nov 2, 2023
+ *      Author: Marisa
+ */
+#include "LED.h"
+#include "UART.h"
+
+#include "main.h"
+#define
+void software_led(){
+	HAL_GPIO_Init(PA9);
+	while(0 == 0){
+		if(HAL_GPIO_ReadPin(PA9) == 1){
+			LED_TOGGLE(6);
+		}
+	}
+}

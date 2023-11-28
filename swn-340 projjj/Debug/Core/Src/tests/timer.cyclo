@@ -1,0 +1,2 @@
+../Core/Src/tests/timer.c:15:6:init_syst	1
+../Core/Src/tests/timer.c:26:6:clock	3
