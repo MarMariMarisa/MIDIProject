@@ -17,6 +17,7 @@
 #include "interruptHandlers.h"
 #include "stm32l4xx_hal.h"
 #include "timer.h"
+#include "sqr_wave.h"
 
 int EXTERN_LED = 6;
 
@@ -27,8 +28,9 @@ int main(void){
 	LED_Init(EXTERN_LED);
 	init_syst();
 	GPIO_Init();
-	mode_print();
-	init_player();
+	run_wave(3);
+//	mode_print();
+//	init_player();
 
 }
 

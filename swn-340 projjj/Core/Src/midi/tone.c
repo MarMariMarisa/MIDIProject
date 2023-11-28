@@ -8,7 +8,7 @@
 
 #include "tone.h"
 
-#define TICK_SPEED (1000000) // Recommended SysTick speed, adjust if using something different.
+#define TICK_SPEED (1000) // Recommended SysTick speed, adjust if using something different.
 #define MAX_TONES (1)
 
 static float notes[] = {
