@@ -15,13 +15,13 @@
 #include "printf.h"
 #include "systick.h"
 #include "tone.h"
-#include "stdio.h"
 int count = 0;
 void SysTick_Handler(){
 	count++;
 }
 
 void run_wave(int frequency){
+	init
 	uint32_t duration = hertz_to_duration(frequency);
 	while(0 == 0){
 		if(count%duration  < (duration >>1)){

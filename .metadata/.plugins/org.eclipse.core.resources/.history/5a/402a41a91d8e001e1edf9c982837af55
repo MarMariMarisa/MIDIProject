@@ -28,7 +28,7 @@ int main(void){
 	LED_Init(EXTERN_LED);
 	init_syst();
 	GPIO_Init();
-	run_wave(1);
+	run_wave(3);
 //	mode_print();
 //	init_player();
 

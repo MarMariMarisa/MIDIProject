@@ -15,7 +15,6 @@
 #include "printf.h"
 #include "systick.h"
 #include "tone.h"
-#include "stdio.h"
 int count = 0;
 void SysTick_Handler(){
 	count++;
@@ -24,11 +23,18 @@ void SysTick_Handler(){
 void run_wave(int frequency){
 	uint32_t duration = hertz_to_duration(frequency);
 	while(0 == 0){
-		if(count%duration  < (duration >>1)){
-			printf("%d",1);
-		}else{
-			printf("%d",0);
+		while(cnt <=50){
+	       cnt++;
+		   delay_systick();
+		   printf("%d",0);
 		}
-
+		cnt = 0;
+		printf("\r\n%s"," ");
+		while(cnt <=50){
+			       cnt++;
+				   delay_systick();
+				   printf("%d",1);
+		}
+		cnt = 0;
 	}
 }

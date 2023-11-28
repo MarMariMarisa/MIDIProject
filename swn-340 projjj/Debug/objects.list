@@ -10,7 +10,6 @@
 "./Core/Src/midi/song.o"
 "./Core/Src/midi/tone.o"
 "./Core/Src/project.o"
-"./Core/Src/system/interruptHandlers.o"
 "./Core/Src/system/printf.o"
 "./Core/Src/system/stm32l4xx_hal_msp.o"
 "./Core/Src/system/stm32l4xx_it.o"

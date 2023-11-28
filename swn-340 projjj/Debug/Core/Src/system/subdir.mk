@@ -5,7 +5,6 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Core/Src/system/interruptHandlers.c \
 ../Core/Src/system/printf.c \
 ../Core/Src/system/stm32l4xx_hal_msp.c \
 ../Core/Src/system/stm32l4xx_it.c \
@@ -15,7 +14,6 @@ C_SRCS += \
 ../Core/Src/system/systick.c 
 
 OBJS += \
-./Core/Src/system/interruptHandlers.o \
 ./Core/Src/system/printf.o \
 ./Core/Src/system/stm32l4xx_hal_msp.o \
 ./Core/Src/system/stm32l4xx_it.o \
@@ -25,7 +23,6 @@ OBJS += \
 ./Core/Src/system/systick.o 
 
 C_DEPS += \
-./Core/Src/system/interruptHandlers.d \
 ./Core/Src/system/printf.d \
 ./Core/Src/system/stm32l4xx_hal_msp.d \
 ./Core/Src/system/stm32l4xx_it.d \
@@ -42,7 +39,7 @@ Core/Src/system/%.o Core/Src/system/%.su Core/Src/system/%.cyclo: ../Core/Src/sy
 clean: clean-Core-2f-Src-2f-system
 
 clean-Core-2f-Src-2f-system:
-	-$(RM) ./Core/Src/system/interruptHandlers.cyclo ./Core/Src/system/interruptHandlers.d ./Core/Src/system/interruptHandlers.o ./Core/Src/system/interruptHandlers.su ./Core/Src/system/printf.cyclo ./Core/Src/system/printf.d ./Core/Src/system/printf.o ./Core/Src/system/printf.su ./Core/Src/system/stm32l4xx_hal_msp.cyclo ./Core/Src/system/stm32l4xx_hal_msp.d ./Core/Src/system/stm32l4xx_hal_msp.o ./Core/Src/system/stm32l4xx_hal_msp.su ./Core/Src/system/stm32l4xx_it.cyclo ./Core/Src/system/stm32l4xx_it.d ./Core/Src/system/stm32l4xx_it.o ./Core/Src/system/stm32l4xx_it.su ./Core/Src/system/syscalls.cyclo ./Core/Src/system/syscalls.d ./Core/Src/system/syscalls.o ./Core/Src/system/syscalls.su ./Core/Src/system/sysmem.cyclo ./Core/Src/system/sysmem.d ./Core/Src/system/sysmem.o ./Core/Src/system/sysmem.su ./Core/Src/system/system_stm32l4xx.cyclo ./Core/Src/system/system_stm32l4xx.d ./Core/Src/system/system_stm32l4xx.o ./Core/Src/system/system_stm32l4xx.su ./Core/Src/system/systick.cyclo ./Core/Src/system/systick.d ./Core/Src/system/systick.o ./Core/Src/system/systick.su
+	-$(RM) ./Core/Src/system/printf.cyclo ./Core/Src/system/printf.d ./Core/Src/system/printf.o ./Core/Src/system/printf.su ./Core/Src/system/stm32l4xx_hal_msp.cyclo ./Core/Src/system/stm32l4xx_hal_msp.d ./Core/Src/system/stm32l4xx_hal_msp.o ./Core/Src/system/stm32l4xx_hal_msp.su ./Core/Src/system/stm32l4xx_it.cyclo ./Core/Src/system/stm32l4xx_it.d ./Core/Src/system/stm32l4xx_it.o ./Core/Src/system/stm32l4xx_it.su ./Core/Src/system/syscalls.cyclo ./Core/Src/system/syscalls.d ./Core/Src/system/syscalls.o ./Core/Src/system/syscalls.su ./Core/Src/system/sysmem.cyclo ./Core/Src/system/sysmem.d ./Core/Src/system/sysmem.o ./Core/Src/system/sysmem.su ./Core/Src/system/system_stm32l4xx.cyclo ./Core/Src/system/system_stm32l4xx.d ./Core/Src/system/system_stm32l4xx.o ./Core/Src/system/system_stm32l4xx.su ./Core/Src/system/systick.cyclo ./Core/Src/system/systick.d ./Core/Src/system/systick.o ./Core/Src/system/systick.su
 
 .PHONY: clean-Core-2f-Src-2f-system
 
