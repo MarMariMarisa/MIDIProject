@@ -1,0 +1,11 @@
+/*
+ * hw8.c
+ *
+ *  Created on: Nov 30, 2023
+ *      Author: Marisa
+ */
+
+
+uint32_t parseDelay(uint8_t^ delay){
+
+}

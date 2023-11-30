@@ -18,6 +18,7 @@
 #include "stm32l4xx_hal.h"
 #include "timer.h"
 #include "sqr_wave.h"
+#include "hw8.h"
 
 int EXTERN_LED = 6;
 
@@ -28,7 +29,8 @@ int main(void){
 	LED_Init(EXTERN_LED);
 	init_syst();
 	GPIO_Init();
-	run_wave(1);
+	runTest();
+//	run_wave(1);
 //	mode_print();
 //	init_player();
 
