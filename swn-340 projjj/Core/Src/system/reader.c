@@ -9,7 +9,9 @@
 #include "UART.h"
 #include "printf.h"
 #include "LED.h"
-static char BUFFER[128];
+#include "project.h"
+static char BUER[128];
+
 
 char* read_line(){
 	//read one characterA
@@ -17,15 +19,18 @@ char* read_line(){
 	int index = 0;
 	char ch = 0;
 	while(ch != '\r'){
+		if(isRemote == 0){
+			break;
+		}
 		ch = (char)USART_Read_Nonblocking(USART2);
 		if(ch != '\0'){
 			printf("%c",ch);
-			BUFFER[index] = ch;
+			BUER[index] = ch;
 			index++;
 		}
 	}
-	BUFFER[index - 1] = 0;
-	return BUFFER;
+	BUER[index - 1] = 0;
+	return BUER;
 
 }
 void run(){

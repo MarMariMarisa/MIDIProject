@@ -1,8 +1,8 @@
-../Core/Src/project.c:33:6:next_song	19
-../Core/Src/project.c:97:6:play_song	1
-../Core/Src/project.c:103:6:stop_song	1
-../Core/Src/project.c:107:7:pause_song	6
-../Core/Src/project.c:140:6:manual_pause	3
-../Core/Src/project.c:155:6:take_input_remote	8
-../Core/Src/project.c:204:6:mode_print	2
-../Core/Src/project.c:213:6:init_player	6
+../Core/Src/project.c:37:6:next_song	9
+../Core/Src/project.c:70:6:play_song	3
+../Core/Src/project.c:87:6:stop_song	1
+../Core/Src/project.c:91:7:pause_song	6
+../Core/Src/project.c:124:6:manual_pause	3
+../Core/Src/project.c:139:6:take_input_remote	8
+../Core/Src/project.c:188:6:mode_print	2
+../Core/Src/project.c:197:6:init_player	5

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;swn-340 projjj/Core/Inc/bigToLittleEndian.c&apos; to &apos;bigToLittleEndian.h&apos;" description="Rename resource &apos;bigToLittleEndian.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/bigToLittleEndian.c" name="bigToLittleEndian.h" stamp="1701740083913" updateReferences="true"/>
+</session>

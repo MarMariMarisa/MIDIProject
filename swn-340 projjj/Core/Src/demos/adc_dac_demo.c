@@ -52,7 +52,6 @@ void run_adc_dac_demo()
 			// Rediculous way to eliminate warning. Delete this line when printf is working.
 			adc_value = adc_value;
 
-
 			DAC_Set_Value ((0x100 * counter) % 0x1000);
 			counter++;
 			one_second_elapsed = FALSE;

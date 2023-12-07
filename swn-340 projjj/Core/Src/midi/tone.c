@@ -7,11 +7,15 @@
 
 
 #include "tone.h"
+#include "systick.h"
+#include "song.h"
+#include "interruptHandlers.h"
+#include "printf.h"
 
-#define TICK_SPEED (1000) // Recommended SysTick speed, adjust if using something different.
+#define TICK_SPEED (1000000) // Recommended SysTick speed, adjust if using something different.
 #define MAX_TONES (1)
 
-static float notes[] = {
+static float notes[] = { //velocity is what gets passed here!!!
 /* Octave -1 */			   8.18,    8.66,    9.18,    9.73,   10.30,   10.92,   11.56,   12.25,   12.98,   13.75,   14.57,   13.44,
 /* Octave  0 */           16.35,   17.32,   18.35,   19.45,   20.60,   21.83,   23.12,   24.50,   25.96,   27.50,   29.14,   30.87,
 /* Octave  1 */  	      32.70,   34.65,   36.71,   38.89,   41.20,   43.65,   46.25,   49.00,   51.91,   55.00,   58.27,   61.74,
@@ -24,22 +28,20 @@ static float notes[] = {
 /* Octave  8 */         4186.01, 4434.92, 4698.63, 4978.03, 5274.04, 5587.65, 5919.91, 6271.93, 6644.88, 7040.00, 7458.62, 7902.13,
 /* Octave  9 */         8372.02, 8869.84, 9397.26, 9956.06,10548.08,11175.30,11839.82,12543.86};
 
-typedef struct {
-	uint32_t duration;
-	uint16_t power;
-} tone_info;
+
 
 static uint32_t counter = 0;
+tone_info current_song[1248];
 
 static tone_info tones[MAX_TONES] = {{0,0}};
 
 /* You will want to integrate this with your existing one
    but it is here for standalone testing                 
 */
-//void SysTick_Handler() {
-//	counter++;
-//}
 
+void Error_Handler(){
+	//erro
+}
 uint32_t get_tick_speed ();
 
 
@@ -57,9 +59,63 @@ uint32_t get_counter () {
 	return counter;
 }
 
+uint32_t parseDelay(uint8_t* delay) {
+    uint32_t result = 0;
+    uint8_t currentByte;
+
+    do {
+        currentByte = *delay++;
+        result = (result << 7) | (currentByte & 0x7F);
+    } while (currentByte & 0x80);
+
+    return result;
+}
+
 void reset_counter () {
 	counter = 0;
 }
+
+void setCurrentSong(song song){
+	int i = 0;
+	int mtrkCnt = 0;
+	int numNotes = 0;
+	while(mtrkCnt < 2){
+		mtrkCnt = 12;
+	}
+	while(0 == 0){
+		if(song.p_song[i] == 77 && song.p_song[i+1] == 47 && song.p_song[i+2] == 0){
+			printf("end");
+			break;
+		}
+		if(song.p_song[i] == 128 || song.p_song[i] == 144){
+			printf("\r\n%s","new message");
+			printf("\r\n%s%d","i location: ",i);
+			printf("\r\n%s%x","message type",song.p_song[i]);
+			tone_info currentTone;
+			uint8_t currentMessage[16];
+			currentMessage[0] = song.p_song[i];
+			int x = 1;
+			i++;
+			while(song.p_song[i] != 128 && song.p_song[i] !=144){
+				currentMessage[x] = song.p_song[i];
+				printf("\r\n%x",currentMessage[x]);
+				x++;
+				i++;
+				if(song.p_song[i] == 77){
+					printf("herer");
+					break;
+				}
+			}
+			currentTone.duration = parseDelay(currentMessage);
+			currentTone.power = notes[(int)currentMessage[2]];
+			printf("\r\n%s%d","velocity: ", currentMessage[2]);
+			current_song[numNotes] = currentTone;
+			}else{
+			i++;
+		}
+	}
+}
+
 
 // Add a tone to the tones array
 uint8_t add_tone (uint8_t note, uint8_t velocity) {
@@ -76,7 +132,15 @@ uint8_t remove_tone (uint8_t note) {
 
 // Play any tones in the array
 void play_tones () {
-
+    init_systick();
+    DAC_Init ();
+    DAC_Start ();
+    if (ticks % tones[0].duration < tones[0].duration >> 1) {
+        	DAC_Set_Value (4000);
+        }
+        else {
+            DAC_Set_Value(0);
+        }
 }
 
 

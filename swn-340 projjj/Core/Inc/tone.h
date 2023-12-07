@@ -9,7 +9,15 @@
 #define INC_TONE_H_
 
 #include "dac.h"
+#include "song.h"
+typedef struct {
+	uint32_t duration;
+	uint32_t tempo;
+	uint32_t divisor;
+	uint16_t power;
+} tone_info;
 
+extern tone_info current_song[1248];
 /**
  * SysTick handler. Since tones are controlled by software, the SysTick timer
  * must be used accurately manage the times.
@@ -21,6 +29,7 @@ void SysTick_Handler();
  * in the system.
  */
 uint32_t get_counter ();
+void setCurrentSong(song song);
 
 void reset_counter ();
 

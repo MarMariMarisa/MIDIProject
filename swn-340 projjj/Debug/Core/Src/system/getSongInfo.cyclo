@@ -1,0 +1,3 @@
+../Core/Src/system/getSongInfo.c:17:5:getTempo	4
+../Core/Src/system/getSongInfo.c:28:6:getSongTitle	2
+../Core/Src/system/getSongInfo.c:41:6:getCopyright	10

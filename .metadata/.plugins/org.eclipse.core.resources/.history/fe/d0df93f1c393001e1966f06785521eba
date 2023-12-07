@@ -1,0 +1,29 @@
+#include <stdint.h>
+#include "printf.h"
+#include "tone.h"
+#include "systick.h"
+#include "adc.h"
+#include "dac.h"
+#include "tone.h"
+
+static int count = 0;
+
+void SysTick_Handler () {
+    count++;
+}
+
+void Error_Handler(){
+//
+}
+//frequency is in hertz
+void run_wave(int frequency){
+	uint32_t duration = hertz_to_duration(frequency);
+	while(0 == 0){
+		if(count%duration  < (duration >>1)){
+			printf("%d",1);
+		}else{
+			printf("%d",0);
+		}
+
+	}
+}

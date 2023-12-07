@@ -29,10 +29,10 @@ int main(void){
 	LED_Init(EXTERN_LED);
 	init_syst();
 	GPIO_Init();
-	runTest();
-//	run_wave(1);
-//	mode_print();
-//	init_player();
+//
+//	run_wave(2000);
+	mode_print();
+	init_player();
 
 }
 

@@ -1,0 +1,29 @@
+/*
+ * getSongInfo.c
+ *
+ *  Created on: Dec 6, 2023
+ *      Author: Marisa
+ */
+
+#include "song.h"
+#include "printf.h"
+
+int getTempo(song Song){
+	while(0==0){
+			if(song.p_song[i] == 255 && song.p_song[i+1] == 3){
+				temo = ((song.p_song[i - 4]) << 16) | ((song.p_song[i - 3]) << 8) | (song.p_song[i - 2]);
+				break;
+			}
+			i++;
+		}
+	return temo;
+}
+
+char getSongTitle(song song, int i){
+	int numToCount = song.p_song[i+2];
+	i++;
+	for(int p = i; p<=numToCount+i+1;p++){
+		songTitle[titleIndex] = (char)(song.p_song[p]);
+		titleIndex++;
+	}
+}

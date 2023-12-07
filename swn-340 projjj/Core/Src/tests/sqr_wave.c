@@ -1,34 +1,41 @@
-/*
- * sqr_wave.c
- *
- *  Created on: Nov 28, 2023
- *      Author: Marisa
- */
-
-
-//print 1 when the wave is high and 0 when the wave is low
-//run for a 1 second frequency wave
-//verify it works in your terminal
-
-
-//frequency is in Hertz
+#include <stdint.h>
 #include "printf.h"
+#include "tone.h"
 #include "systick.h"
+#include "adc.h"
+#include "dac.h"
 #include "tone.h"
 #include "stdio.h"
-int count = 0;
-void SysTick_Handler(){
-	count++;
+
+static int count = 0;
+
+void SysTick_Handler () {
+    count++;
 }
 
+void Error_Handler(){
+//
+}
+uint32_t hertz_to_duration (float hertz) {
+	uint32_t tick_speed = 10000000; // This is a hack, you'll fix it later
+	if (hertz == 0)
+		return 0;
+	float duration = 1 / hertz;
+	return (uint32_t) (duration * tick_speed);
+}
+//frequency is in hertz
 void run_wave(int frequency){
 	uint32_t duration = hertz_to_duration(frequency);
-	while(0 == 0){
-		if(count%duration  < (duration >>1)){
-			printf("%d",1);
-		}else{
-			printf("%d",0);
-		}
+	init_systick();
+	DAC_Init ();
+	DAC_Start ();
 
+	while(1==1){
+		if(count % duration < duration >> 1){
+	        DAC_Set_Value (4000);
+	   }
+	   else {
+	          DAC_Set_Value(0);
+	   }
 	}
 }

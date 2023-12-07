@@ -26,7 +26,7 @@ struct SYST* init_systick(){
 		//clear csr register
 		SYST_TICK->CSR &= ~(1 << 0);;
 	    // Set timer to 10 ms
-	    SYST_TICK->RVR = 79999;
+	    SYST_TICK->RVR = 799;
 	    //Set to internal clock
 	    SYST_TICK->CSR |= (1<<2); // Use pc source
 	    //Enable timer

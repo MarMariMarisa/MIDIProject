@@ -1,0 +1,17 @@
+/*
+ * getSongInfo.h
+ *
+ *  Created on: Dec 6, 2023
+ *      Author: Marisa
+ */
+
+#include "song.h"
+#ifndef CORE_INC_GETSONGINFO_H_
+#define CORE_INC_GETSONGINFO_H_
+
+
+
+#endif /* CORE_INC_GETSONGINFO_H_ */
+
+int getTempo(song Song);
+char* getSongTitle(song song, int i)

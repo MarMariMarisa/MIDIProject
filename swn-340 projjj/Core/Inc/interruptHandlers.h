@@ -4,6 +4,7 @@
  *  Created on: Nov 15, 2023
  *      Author: Marisa
  */
+#include "stdint.h"
 
 #ifndef CORE_INC_INTERRUPTHANDLERS_H_
 #define CORE_INC_INTERRUPTHANDLERS_H_
@@ -11,6 +12,7 @@
 
 
 #endif /* CORE_INC_INTERRUPTHANDLERS_H_ */
+extern uint32_t ticks;
 
 void USART2_IRQHandler(void);
 

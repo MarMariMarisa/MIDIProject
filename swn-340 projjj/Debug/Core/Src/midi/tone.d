@@ -28,7 +28,10 @@ Core/Src/midi/tone.o: ../Core/Src/midi/tone.c ../Core/Inc/tone.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h \
- ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h
+ ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
+ ../Core/Inc/song.h ../Core/Inc/systick.h \
+ ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h \
+ ../Core/Inc/song.h ../Core/Inc/interruptHandlers.h ../Core/Inc/printf.h
 ../Core/Inc/tone.h:
 ../Core/Inc/dac.h:
 ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:
@@ -60,3 +63,9 @@ Core/Src/midi/tone.o: ../Core/Src/midi/tone.c ../Core/Inc/tone.h \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h:
+../Core/Inc/song.h:
+../Core/Inc/systick.h:
+../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h:
+../Core/Inc/song.h:
+../Core/Inc/interruptHandlers.h:
+../Core/Inc/printf.h:

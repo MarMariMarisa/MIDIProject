@@ -7,7 +7,7 @@ Core/Src/tests/reader.o: ../Core/Src/tests/reader.c ../Core/Inc/reader.h \
  ../Drivers/CMSIS/Include/mpu_armv7.h \
  ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h \
  ../Core/Inc/printf.h ../Core/Inc/UART.h ../Core/Inc/printf.h \
- ../Core/Inc/LED.h ../Core/Inc/project.h
+ ../Core/Inc/LED.h
 ../Core/Inc/reader.h:
 ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
@@ -20,4 +20,3 @@ Core/Src/tests/reader.o: ../Core/Src/tests/reader.c ../Core/Inc/reader.h \
 ../Core/Inc/UART.h:
 ../Core/Inc/printf.h:
 ../Core/Inc/LED.h:
-../Core/Inc/project.h:

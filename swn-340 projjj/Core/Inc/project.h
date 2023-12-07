@@ -15,6 +15,8 @@ void run_project ();
 extern volatile int PLAY_PAUSE_TOG;
 extern char BUFFER[];
 extern int volatile lightState;
+extern char currSongTitle[128];
+extern char currSongCopyright[128];
 
 #endif /* INC_PROJECT_H_ */
 

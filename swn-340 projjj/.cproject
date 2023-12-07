@@ -86,11 +86,12 @@
 							<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.objcopy.symbolsrec.1902212676" name="MCU Output Converter Motorola S-rec with symbols" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.objcopy.symbolsrec"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.389771116.1094855384" name="interruptHandlers.c" rcbsApplicability="disable" resourcePath="Core/Src/system/interruptHandlers.c" toolsToInvoke="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.2083034297.708924463">
-						<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.2083034297.708924463" name="MCU GCC Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.2083034297"/>
+					<fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.389771116.2070413145" name="tone.c" rcbsApplicability="disable" resourcePath="Core/Src/midi/tone.c" toolsToInvoke="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.2083034297.1655547868">
+						<tool id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.2083034297.1655547868" name="MCU GCC Compiler" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.2083034297"/>
 					</fileInfo>
+					<fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.389771116.883060255" name="interruptHandlers.h" rcbsApplicability="disable" resourcePath="Core/Inc/interruptHandlers.h" toolsToInvoke=""/>
 					<sourceEntries>
-						<entry excluding="Core/Src/system/interruptHandlers.c|Core/Src/demos/adc_dac_demo.c|Core/Src/system/reader.c|Core/Src/tests/clock.c|Core/Src/tests/hw4.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Core/Src/tests/sqr_wave.c|Core/Src/tests/hw8.c|Core/Src/demos/adc_dac_demo.c|Core/Src/tests/clock.c|Core/Src/tests/hw4.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

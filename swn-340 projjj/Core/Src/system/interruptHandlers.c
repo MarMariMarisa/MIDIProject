@@ -60,7 +60,7 @@ void EXTI9_5_IRQHandler(void) {
     uint32_t timeSinceLastPress = startTime - lastButtonPressTime;
 
     // Update buttonPressCount based on time since last press
-    if (timeSinceLastPress <= 1000) {
+    if (timeSinceLastPress <= 100000) {
         buttonPressCount++;
     } else {
         buttonPressCount = 1;
@@ -77,13 +77,13 @@ void EXTI9_5_IRQHandler(void) {
     uint32_t elapsed = ticks - startTime;
 
     // Delay for a short period
-    for(int i = 0; i < 1000; i++) {
+    for(int i = 0; i < 100000; i++) {
         delay_systick();
     }
 
     // Handle different cases based on isRemote and elapsed time
     if (isRemote == 0) {
-        if (elapsed > 1000) {
+        if (elapsed > 100000) {
             stop_song();
         } else {
             if (PLAY_PAUSE_TOG == 0) {
