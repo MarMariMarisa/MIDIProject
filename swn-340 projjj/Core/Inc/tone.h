@@ -11,13 +11,14 @@
 #include "dac.h"
 #include "song.h"
 typedef struct {
-	uint32_t duration;
+	int duration;
 	uint32_t tempo;
 	uint32_t divisor;
 	uint16_t power;
 } tone_info;
 
 extern tone_info current_song[1248];
+
 /**
  * SysTick handler. Since tones are controlled by software, the SysTick timer
  * must be used accurately manage the times.
@@ -46,7 +47,7 @@ uint8_t add_tone (uint8_t note, uint8_t velocity);
 /**
  * Removes a tone from the current group of tones that can be played.
  */
-uint8_t remove_tone (uint8_t note);
+uint8_t remove_tone ();
 
 
 /**

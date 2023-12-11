@@ -24,6 +24,7 @@
 #include "tone.h"
 #include "song.h"
 #include "getSongInfo.h"
+
 static int MAX_STRING_SIZE = 64;
 volatile int isRemote = 1;
 volatile int PLAY_PAUSE_TOG = 0;
@@ -32,6 +33,7 @@ int currentSongNum = -1;
 volatile int lightState = 0;
 char currSongTitle[128] = {};
 char currSongCopyright[128] = {};
+int timeNotePlayed = 0;
 
 
 void next_song(){
@@ -70,16 +72,29 @@ void play_song(){
 	lightState = 1;
 	LED_On(EXTERN_LED);
 	setCurrentSong(get_song(currentSongNum));
-	while(0==0){
-		play_tones();
-
-		for(int i = 0; i < 1248; i++){
-		  if(current_song[i].duration < ticks){
-
-			  add_tone(current_song[i].duration,current_song[i].power);
-		  }
+	ticks = 0;
+	init_systick();
+	DAC_Init ();
+	DAC_Start ();
+	int k = 0;
+	add_tone(current_song[0].duration,current_song[0].power);
+	timeNotePlayed = ticks;
+	while(1==1){
+		for(int i = 0; i < 1248;i++){
+			if((ticks - timeNotePlayed) >= current_song[k].duration){
+				remove_tone();
+//				printf("\r\n%s%d","tocls: ",ticks);
+//				printf("\r\n%s%d","timPlayed: ",timeNotePlayed);
+//				printf("\r\n%s%d","durr: ",current_song[k].duration);
+				add_tone(current_song[k+1].duration,current_song[k+1].power);
+				timeNotePlayed = ticks;
+				k++;
+			}
 		}
+		play_tones();
 	}
+
+
 }
 //stop song
 void stop_song(){
@@ -122,7 +137,6 @@ char* pause_song() {
 void manual_pause(){
 	lightState = 2;// Declare BUFFER as static
 	PLAY_PAUSE_TOG = 0;
-	printf("\r\n%s\r\n","i am paused technically");
 	int cnt = 0;
 	while (cnt < 1000) {
 		cnt++;

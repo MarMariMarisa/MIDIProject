@@ -18,7 +18,7 @@
 
 // Global variables
 uint32_t buttonPressCount = 0;
-uint32_t ticks = 0;
+int ticks = 0;
 uint32_t lastButtonPressTime;
 
 // Interrupt handler for USART2

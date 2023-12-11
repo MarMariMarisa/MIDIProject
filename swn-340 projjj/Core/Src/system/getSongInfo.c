@@ -24,6 +24,9 @@ int getTempo(song song){
 	}
 	return 0;
 }
+int getDivision(song song){
+	return ((song.p_song[12]) << 8) | (song.p_song[13]);
+}
 
 void getSongTitle(song song, int i){
 

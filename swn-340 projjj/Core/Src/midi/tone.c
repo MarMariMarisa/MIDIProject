@@ -11,7 +11,8 @@
 #include "song.h"
 #include "interruptHandlers.h"
 #include "printf.h"
-
+#include "getSongInfo.h"
+#include "project.h"
 #define TICK_SPEED (1000000) // Recommended SysTick speed, adjust if using something different.
 #define MAX_TONES (1)
 
@@ -32,13 +33,14 @@ static float notes[] = { //velocity is what gets passed here!!!
 
 static uint32_t counter = 0;
 tone_info current_song[1248];
+song songA;
+
 
 static tone_info tones[MAX_TONES] = {{0,0}};
 
 /* You will want to integrate this with your existing one
    but it is here for standalone testing                 
 */
-
 void Error_Handler(){
 	//erro
 }
@@ -76,42 +78,42 @@ void reset_counter () {
 }
 
 void setCurrentSong(song song){
+	songA = song;
 	int i = 0;
 	int mtrkCnt = 0;
 	int numNotes = 0;
 	while(mtrkCnt < 2){
-		mtrkCnt = 12;
+		if(song.p_song[i] == 77 && song.p_song[i+1] == 84 && song.p_song[i+2] == 114 && song.p_song[i+3] == 107){
+			mtrkCnt++;
+		}
+		i++;
 	}
 	while(0 == 0){
-		if(song.p_song[i] == 77 && song.p_song[i+1] == 47 && song.p_song[i+2] == 0){
-			printf("end");
+		if(song.p_song[i] == 255 && song.p_song[i+1] == 47 && song.p_song[i+2] == 0){
 			break;
+
 		}
 		if(song.p_song[i] == 128 || song.p_song[i] == 144){
-			printf("\r\n%s","new message");
-			printf("\r\n%s%d","i location: ",i);
-			printf("\r\n%s%x","message type",song.p_song[i]);
 			tone_info currentTone;
 			uint8_t currentMessage[16];
 			currentMessage[0] = song.p_song[i];
 			int x = 1;
 			i++;
 			while(song.p_song[i] != 128 && song.p_song[i] !=144){
-				currentMessage[x] = song.p_song[i];
-				printf("\r\n%x",currentMessage[x]);
-				x++;
+				currentMessage[x] = song.p_song[i];				x++;
 				i++;
-				if(song.p_song[i] == 77){
-					printf("herer");
+				if(song.p_song[i] == 77 || song.p_song[i] == 255){
 					break;
 				}
 			}
-			currentTone.duration = parseDelay(currentMessage);
-			currentTone.power = notes[(int)currentMessage[2]];
-			printf("\r\n%s%d","velocity: ", currentMessage[2]);
+			int micro = (getTempo(song) / getDivision(song)) / 100;
+
+			currentTone.duration = (parseDelay(currentMessage) * micro);
+			currentTone.power = currentMessage[2];
 			current_song[numNotes] = currentTone;
-			}else{
-			i++;
+			numNotes++;
+		}else{
+		i++;
 		}
 	}
 }
@@ -119,28 +121,26 @@ void setCurrentSong(song song){
 
 // Add a tone to the tones array
 uint8_t add_tone (uint8_t note, uint8_t velocity) {
-	tones [0] = (tone_info){hertz_to_duration (notes [note]), velocity};
+	tones [0] = (tone_info){hertz_to_duration (notes[note]),getTempo(songA),getDivision(songA), velocity};
 	return 0;
 }
 
 // Remove a tone from the tones array
-uint8_t remove_tone (uint8_t note) {
-	tones [0].duration = hertz_to_duration (notes [note]);
+uint8_t remove_tone () {
+	tones [0].duration = 0;
 	tones [0].power = 0;
 	return 0;
 }
 
 // Play any tones in the array
 void play_tones () {
-    init_systick();
-    DAC_Init ();
-    DAC_Start ();
-    if (ticks % tones[0].duration < tones[0].duration >> 1) {
-        	DAC_Set_Value (4000);
-        }
-        else {
-            DAC_Set_Value(0);
-        }
+	uint32_t duration = hertz_to_duration(tones[0].duration);
+	if(ticks % duration < duration >> 1){
+		DAC_Set_Value (tones[0].power * 32);
+	}
+		else {
+			DAC_Set_Value(0);
+		}
 }
 
 

@@ -1,2 +1,0 @@
-../Core/Src/tests/bigToLittleEndian.c:13:10:convert_to_uint16	1
-../Core/Src/tests/bigToLittleEndian.c:16:10:convert_to_uint32	1

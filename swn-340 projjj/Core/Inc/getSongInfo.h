@@ -15,5 +15,6 @@ extern char songTitle[128];;
 #endif /* CORE_INC_GETSONGINFO_H_ */
 
 int getTempo(song Song);
+int getDivision(song song);
 void getSongTitle(song song, int i);
 void  getCopyright(song song);

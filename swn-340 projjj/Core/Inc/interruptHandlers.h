@@ -12,7 +12,7 @@
 
 
 #endif /* CORE_INC_INTERRUPTHANDLERS_H_ */
-extern uint32_t ticks;
+extern int ticks;
 
 void USART2_IRQHandler(void);
 
